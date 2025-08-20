@@ -4,7 +4,9 @@
 
 ![](./public/assets/images/Screenshot_readme.png)
 
-[Ссылка на прод всего сайта](https://ony.ru/) [Ссылка на прод карьерной страницы](https://join.ony.ru/)
+[Ссылка на прод всего сайта](https://ony.ru/)
+
+[Ссылка на прод карьерной страницы](https://join.ony.ru/)
 
 # Роль и достижения:
 
