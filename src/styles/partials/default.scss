@@ -1,0 +1,85 @@
+@use "mixins";
+@use "variable";
+
+html, body {
+    // height: 100%;
+    // width: 100%;
+    -webkit-text-size-adjust: none;
+    overscroll-behavior-y: contain;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+html {
+    //scrollbar-gutter: stable;
+    scroll-behavior: smooth;
+    font-size: var(--scale);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--color);
+    transition: background-color .3s;
+    @include mixins.body-m();
+    @include mixins.scrollbar();
+
+    &.is-fake-scroll {
+        &::after {
+            content: '';
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow-y: scroll;
+            z-index: 3;
+        }
+    }
+}
+
+body, input, button {
+    font-family: variable.$font0;
+}
+
+input, button {
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+svg {
+    fill: currentColor;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+    cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    margin: 0;
+}
+
+h1, h2 {
+    @include mixins.h1();
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+p {
+    margin-bottom: 1em;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

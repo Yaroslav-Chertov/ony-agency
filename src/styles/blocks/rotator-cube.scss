@@ -1,0 +1,150 @@
+@use "../partials/variable";
+
+.rotator-cube {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    max-width: 200rem;
+
+
+    &::before {
+        content: '';
+        background-image: linear-gradient(180deg, var(--background-color), transparent 30%, transparent 70%, var(--background-color));
+        bottom: 0;
+        display: block;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+    }
+
+    &__box {
+        position: relative;
+        width: 100%;
+        height: auto;
+        /* aspect-ratio: 1; */
+        aspect-ratio: auto 10/9;
+        transform-style: preserve-3d;
+        perspective: 2000px;
+        transition: transform 1s ease-in-out;
+        // animation: rotateCube 12s infinite ease-in-out;
+    }
+
+    &__face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backface-visibility: hidden;
+        perspective: none;
+
+        &--top {
+            transform: rotateX(90deg) translateZ(100rem);
+        }
+
+        &--center {
+            transform: rotateX(0deg) translateZ(100rem);
+        }
+
+        &--bottom {
+            transform: rotateX(-90deg) translateZ(100rem);
+        }
+
+        &--back {
+            transform: rotateX(180deg) translateZ(100rem);
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    /* &[data-rotation="0"] &__box {
+        transform: rotateX(0deg);
+    }
+
+    &[data-rotation="1"] &__box {
+        transform: rotateX(-90deg);
+    }
+
+    &[data-rotation="2"] &__box {
+        transform: rotateX(-180deg);
+    }
+
+    &[data-rotation="3"] &__box {
+        transform: rotateX(-270deg);
+    }
+
+    &[data-rotation="4"] &__box {
+        transform: rotateX(-360deg);
+    } */
+}
+
+@media only screen and (max-width: variable.$small) {
+    .rotator-cube {
+        &__face {
+            &--top {
+                transform: rotateX(0deg) translateZ(75rem);
+            }
+
+            &--center {
+                transform: rotateX(90deg) translateZ(75rem);
+            }
+
+            &--bottom {
+                transform: rotateX(180deg) translateZ(75rem);
+            }
+
+            &--back {
+                transform: rotateX(270deg) translateZ(75rem);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+    .rotator-cube {
+        &__face {
+            &--top {
+                transform: rotateX(0deg) translateZ(35rem);
+            }
+
+            &--center {
+                transform: rotateX(90deg) translateZ(35rem);
+            }
+
+            &--bottom {
+                transform: rotateX(180deg) translateZ(35rem);
+            }
+
+            &--back {
+                transform: rotateX(270deg) translateZ(35rem);
+            }
+        }
+    }
+}
+
+@keyframes rotateCube {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    25% {
+        transform: rotateX(-90deg);
+    }
+
+    50% {
+        transform: rotateX(-180deg);
+    }
+
+    75% {
+        transform: rotateX(-270deg);
+    }
+
+    100% {
+        transform: rotateX(-360deg);
+    }
+}

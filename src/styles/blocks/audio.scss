@@ -1,0 +1,134 @@
+@use "../partials/mixins";
+@use "../partials/variable";
+
+.audio {
+    &__container {
+		@include mixins.grid-container();
+	}
+
+    &__list {
+        margin-top: -34rem;
+        @include mixins.grid-row();
+    }
+
+    &__item {
+        margin-top: 34rem;
+        @include mixins.grid-col(3,6);
+
+        &:last-child {
+            @include mixins.grid-offset-left(3,6);
+            @include mixins.grid-col(3,6);
+        }
+    }
+}
+
+.audio-card {
+    display: flex;
+    gap: 20rem;
+
+    &__player {
+        margin-top: 7rem;
+        flex-shrink: 0;
+        width: 42rem;
+        height: 42rem;
+        position: relative;
+        cursor: pointer;
+
+        .svg-icon {
+            fill: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .pause {
+            display: none;
+        }
+
+        .survey-results {
+            &__circle {
+                fill: none;
+                transform: rotate(-90deg);
+                transform-origin: center;
+            }
+        }
+
+        &.is-active {
+            .pause {
+                display: block;
+            }
+
+            .play {
+                display: none;
+            }
+
+            .audio-card {
+                &__player-bg {
+                    fill: #565656;
+                }
+            }
+        }
+    }
+
+    &__title {
+        line-height: 1;
+        letter-spacing: -0.01em;
+    }
+
+    &__subtitle {
+        color: #565656;
+        font-size: 19rem;
+        line-height: 20rem;
+        margin-top: 18rem;
+    }
+}
+
+@media only screen and (hover: hover) {
+
+}
+
+@media only screen and (max-width: variable.$small) {
+    .audio {
+        &__list {
+            margin-top: 0;
+        }
+
+        &__item {
+            margin-top: 50rem;
+            @include mixins.grid-col(6,6);
+
+            &:last-child {
+                margin-left: 0;
+                @include mixins.grid-col(6,6);
+            }
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .audio-card {
+        &__player {
+            margin-top: 1rem;
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+    .audio {
+        &__item {
+            margin-top: 30rem;
+        }
+    }
+
+    .audio-card {
+        &__player {
+            width: 32rem;
+            height: 32rem;
+        }
+
+        &__subtitle {
+            margin-top: 10rem;
+        }
+    }
+}

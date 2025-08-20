@@ -1,0 +1,121 @@
+@use "../partials/mixins";
+@use "../partials/variable";
+
+.infopage {
+    &__wrap {
+        padding-bottom: 100rem;
+        @include mixins.indent-intro();
+    }
+
+    &__container {
+        @include mixins.grid-container();
+    }
+
+    &__row {
+        @include mixins.grid-row();
+    }
+
+    &__col {
+        &--side {
+            @include mixins.grid-col(2,6);
+
+            .infopage__content {
+                max-width: 400rem;
+            }
+        }
+
+        &--main {
+            @include mixins.grid-col(4,6);
+        }
+    }
+
+    &__title {
+    }
+
+    &__block {
+        margin-top: 60rem;
+
+    }
+
+    &__content {
+        font-size: 20rem;
+        line-height: 1.25;
+
+        b {
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 1.5em;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-inline-start: 40px;
+
+            li {
+                margin-bottom: 1.5em;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            + p {
+                margin-top: 1.5em;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$small) {
+    .infopage {
+        &__col {
+			&--side,
+			&--main {
+				@include mixins.grid-col(6,6);
+			}
+
+            &--side {
+                .infopage__content {
+                    margin-bottom: 30rem;
+                }
+            }
+		}
+    }
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+    .infopage {
+        &__content {
+            p {
+                margin-bottom: 1em;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            ul {
+                list-style-type: disc;
+                padding-inline-start: 20px;
+
+                li {
+                    margin-bottom: 1em;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                + p {
+                    margin-top: 1em;
+                }
+            }
+        }
+    }
+}

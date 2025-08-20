@@ -1,0 +1,93 @@
+@use "../partials/variable";
+@use "../partials/mixins";
+
+.about {
+    &__heading {
+        padding-top: 45rem;
+    }
+
+    &__info {
+        padding-top: 245rem;
+
+        .infoblock {
+            &__text {
+                @include mixins.body-l();
+            }
+        }
+    }
+
+    &__awards {
+        padding-top: 140rem;
+    }
+
+    &__more-awards {
+        padding-top: 100rem;
+        padding-bottom: 200rem;
+    }
+
+    &__vacancies {
+        padding-top: 140rem;
+    }
+
+    &__bubbles {
+        padding: 180rem 0 280rem;
+    }
+}
+
+@media only screen and (max-width: variable.$small) {
+    .about {
+        &__heading {
+            padding-top: 40rem;
+        }
+
+        &__info {
+            padding-top: 140rem;
+        }
+
+        &__awards {
+            padding-top: 80rem;
+        }
+
+        &__more-awards {
+            padding-top: 60rem;
+            padding-bottom: 100rem;
+        }
+
+        &__vacancies {
+            padding-top: 80rem;
+        }
+
+        &__bubbles {
+            padding: 80rem 0 200rem;
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+    .about {
+        &__heading {
+            padding-top: 15rem;
+        }
+
+        &__info {
+            padding-top: 70rem;
+        }
+
+        &__awards {
+            padding-top: 50rem;
+        }
+
+        &__more-awards {
+            padding-top: 25rem;
+            padding-bottom: 70rem;
+        }
+
+        &__vacancies {
+            padding-top: 40rem;
+        }
+
+        &__bubbles {
+            padding: 80rem 0;
+        }
+    }
+}

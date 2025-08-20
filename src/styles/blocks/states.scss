@@ -1,0 +1,46 @@
+@use "../partials/variable";
+
+body {
+	&.is-filter-open {
+		.work {
+			&__list {
+				display: none;
+			}
+		}
+
+		.work-filters {
+			&__main {
+				display: flex;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: variable.$small) {
+	body {
+		&.is-nav-open {
+
+			.header,
+			.digital-header {
+				&__burger {
+					span {
+						top: calc(50% - 1rem);
+						transition: top 0.3s, transform 0.3s 0.3s;
+
+						&:nth-of-type(1) {
+							transform: rotate(45deg);
+						}
+
+						&:nth-of-type(2) {
+							transform: rotate(-45deg);
+						}
+					}
+				}
+
+				&__nav {
+					transform: translateX(100%);
+				}
+			}
+		}
+	}
+}

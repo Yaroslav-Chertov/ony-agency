@@ -1,0 +1,102 @@
+@use "../partials/variable";
+@use "../partials/mixins";
+
+.home {
+	background-color: var(--background-color); // нужно чтобы правильно работал mix-blend-mode у заголовков
+	@include mixins.indent-intro();
+
+	&__cases {
+		margin-top: 205rem;
+	}
+
+	&__heading {
+		margin-top: 205rem;
+	}
+
+	&__video {
+		margin-top: 180rem;
+	}
+
+	&__info {
+		padding-top: 75rem;
+	}
+
+	&__logos {
+		padding: 140rem 0 170rem;
+
+		&:last-child {
+			padding-bottom: 260rem;
+		}
+	}
+
+	/* &__hover {
+		pointer-events: none;
+		position: fixed;
+		top: 50%;
+		left: 40%;
+		z-index: 1009;
+		font-size: 80rem;
+		mix-blend-mode: difference;
+		color: #fff;
+		
+		> div {
+			// color: var(--white);
+		}
+	} */
+}
+
+@media only screen and (max-width: variable.$small) {
+	.home {
+		&__cases {
+			margin-top: 140rem;
+		}
+
+		&__heading {
+			margin-top: 120rem;
+		}
+
+		&__video {
+			margin-top: 80rem;
+		}
+
+		&__info {
+			padding-top: 10rem;
+		}
+
+		&__logos {
+			padding: 80rem 0 120rem;
+
+			&:last-child {
+				padding-bottom: 180rem;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+	.home {
+		&__cases {
+			margin-top: 70rem;
+		}
+
+		&__heading {
+			margin-top: 55rem;
+		}
+
+		&__video {
+			margin-top: 70rem;
+		}
+
+		&__info {
+			padding-top: 10rem;
+		}
+
+		&__logos {
+			padding: 30rem 0 40rem;
+
+			&:last-child {
+				padding-bottom: 40rem;
+			}
+		}
+	}
+}

@@ -1,0 +1,58 @@
+@use "../partials/mixins";
+@use "../partials/variable";
+
+.heading {
+	&__container {
+		@include mixins.grid-container();
+	}
+
+	&__title {
+		a {
+			display: inline-block;
+			border-bottom: 1px solid currentColor;
+			position: relative;
+			bottom: 8rem;
+			transition: border-color .3s;
+
+			&.smallersin {
+				margin-left: 40rem;
+				@include mixins.body-m();
+			}
+		}
+	}
+
+	&__link {
+		margin-top: 32rem;
+	}
+}
+
+@media only screen and (hover: hover) {
+	.heading {
+		&__title {
+			a {
+				&:hover {
+					border-color: transparent;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+	.heading {
+		&__title {
+			display: inline-flex;
+			flex-direction: column;
+			align-items: flex-start;
+
+			a {
+				bottom: 4rem;
+				margin-top: 18rem;
+
+				&.smallersin {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+}

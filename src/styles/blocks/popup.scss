@@ -1,0 +1,122 @@
+@use "../partials/mixins";
+@use "../partials/variable";
+
+.popup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 90;
+    background-color: rgba(0, 0, 0, .4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease, visibility 0s .3s;
+
+    &.is-open {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity .3s ease;
+
+        .popup {
+            &__box {
+                transform: translateX(0);
+            }
+        }
+    }
+
+    &__box {
+        background-color: #fff;
+        padding: 24rem 24rem 0 24rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 50%;
+        margin-left: auto;
+        transform: translateX(100%);
+        transition: transform .3s ease-out;
+    }
+
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 40rem;
+    }
+
+    &__title {
+        /* font-family: variable.$font0; */
+        font-size: 32rem;
+        line-height: 1.25;
+        font-weight: 400;
+        margin-bottom: 24rem;
+
+        i {
+            color: rgba(0, 0, 0, .4);
+        }
+    }
+
+    &__main {
+        overflow-y: auto;
+        margin-right: -12rem;
+        padding-right: 12rem;
+        padding-bottom: 40rem;
+        @include mixins.scrollbarClear();
+    }
+
+    &__list {
+        margin-top: 80rem;
+    }
+
+    &__item {
+        margin-bottom: 80rem;
+    }
+
+    &--digital-cases {
+        .popup {
+            &__top {
+                @include mixins.fontW();
+            }
+
+            &__close {
+                transition: opacity .3s;
+                @include mixins.fontW();
+            }
+        }
+    }
+}
+
+@media (hover: hover) {
+    .popup {
+        &__close {
+            &:hover {
+                opacity: .7;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$small) {
+    .popup {
+        &__box {
+            width: 100%;
+            padding: 16rem calc(2 * var(--grid-gap)) 0;
+        }
+
+        &__title {
+            margin-bottom: 40rem;
+        }
+
+        &__list {
+            margin-top: 100rem;
+        }
+
+        &__item {
+            margin-bottom: 100rem;
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+
+}

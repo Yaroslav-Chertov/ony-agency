@@ -1,0 +1,35 @@
+@use "mixins";
+
+/* @include mixins.webfont('ONYSans', 'ONYSans/ONYSans-Regular', 400);
+@include mixins.webfont('ONYOneBeta', 'ONYOneBeta/ONYOneBeta-Regular', 400);
+@include mixins.webfont('ONYOneBeta', 'ONYOneBeta/ONYOneBeta-Medium', 500); */
+
+@font-face {
+    font-family: 'ONYOneBeta';
+    src: url('../fonts/ONYOneBeta/ONYOneBeta-Medium.otf') format('truetype');
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'ONYOneBeta';
+    src: url('../fonts/ONYOneBeta/ONYOneBeta-Regular.otf') format('truetype');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'ONYOneBeta';
+    src: url('../fonts/ONYOneBeta/ONYOneBeta-Light.otf') format('truetype');
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'WilliamTextPro';
+    src: url('../fonts/WilliamTextPro/WilliamTextPro.ttf') format('truetype');
+    src: url('../fonts/WilliamTextPro/WilliamTextPro.woff2') format('woff2'),
+         url('../fonts/WilliamTextPro/WilliamTextPro.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+}

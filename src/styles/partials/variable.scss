@@ -1,0 +1,66 @@
+@use 'sass:color';
+
+// $media: 'only screen and (max-width: 1440px)';
+$mediaV: 1440px;
+
+//font
+$font0: 'ONYOneBeta', Roboto, Arial, Helvetica, sans-serif;
+$font1: 'WilliamTextPro', Georgia, 'Times New Roman', serif;
+
+/* //color
+
+$white: #ffffff;
+$black: #000000;
+$grey: #555; */
+
+/*// easings
+$easeIn = cubic-bezier(0, 0, 0.2, 1);
+$easeOut = cubic-bezier(0.40, 0.00, 1.00, 1.00);
+$easeInOut = cubic-bezier(0.40, 0.00, 0.20, 1.00);*/
+
+//media
+$xlarge: 1920px;
+$large: 1440px;
+$normal: 1365px;
+$medium: 1199px;
+$small: 1023px;
+$xsmall: 767px;
+$xxsmall: 460px;
+
+/*$desktop = "only screen and (min-width: 1024px)"*/
+$hover: "only screen and (hover: hover)";
+
+
+//
+:root {
+	--debug-grid-color: #ff000022;
+	--scale: 1px;
+	--grid-gap: 22rem;
+	--header-min-height: 102rem;
+	--color: #000000;
+	--background-color: #ffffff;
+	--white: #ffffff;
+	--grey: #6C6C6C;
+	--nav-item-padding: 17rem;
+}
+
+@media only screen and (max-width: $medium) {
+	:root {
+		--nav-item-padding: 10rem;
+	}
+}
+
+@media only screen and (max-width: $small) {
+	:root {
+		--grid-gap: 12rem;
+		--header-min-height: 110rem;
+		--nav-item-padding: 0;
+	}
+}
+
+@media only screen and (max-width: $xsmall) {
+	:root {
+		--grid-gap: 8rem;
+		--header-min-height: 90rem;
+	}
+}

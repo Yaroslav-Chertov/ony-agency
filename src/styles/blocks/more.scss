@@ -1,0 +1,320 @@
+@use "../partials/mixins";
+@use "../partials/variable";
+
+.more-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10rem;
+    overflow: hidden;
+    @include mixins.clearButton(variable.$font0);
+    @include mixins.body-s();
+
+    span {
+        border-bottom: 1px solid currentColor;
+        transition: opacity .3s, border-color .3s;
+
+        &:last-of-type:not(:only-of-type) {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+        }
+    }
+
+    .svg-icon {
+        flex-shrink: 0;
+        width: 0;
+        transform-origin: left;
+        transition: width .3s;
+    }
+
+    &.is-active {
+        span {
+            border-color: transparent;
+
+            &:last-of-type:not(:only-of-type) {
+                opacity: 1;
+                position: static;
+            }
+
+            &:first-of-type:not(:only-of-type) {
+                opacity: 0;
+                position: absolute;
+            }
+        }
+
+        .svg-icon {
+            width: 21rem;
+        }
+    }
+}
+
+.more-content {
+    height: 0;
+    overflow: hidden;
+    transition: height .3s;
+
+    &.is-open {
+        height: auto;
+        transition: height .3s;
+    }
+
+    &__container {
+		@include mixins.grid-container();
+        padding-top: 45rem; //100rem
+	}
+
+	&__wrap {
+        border-top: 1px solid currentColor;
+        padding-top: 45rem; //100rem
+	}
+}
+
+.more-clients {
+    @include mixins.body-s();
+
+    &__nav {
+        display: inline-flex;
+        gap: 18rem;
+        margin-bottom: 45rem; //60rem
+    }
+
+    &__tab {
+        display: none;
+
+        &.is-active {
+            display: block;
+        }
+    }
+
+    &__wrap {
+        column-count: 4;
+        column-gap: calc(2 * var(--grid-gap));
+    }
+
+    &__block {
+        break-inside: avoid;
+        margin-bottom: 70rem;
+    }
+
+    &__title {
+        margin-bottom: 25rem;
+    }
+
+    &__item {
+        margin-bottom: 5rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__link {
+        span {
+            border-bottom: 1px solid transparent;
+            transition: border-color .3s;
+        }
+    }
+
+}
+
+.more-awards {
+    @include mixins.body-s();
+
+    &__row {
+        @include mixins.grid-row();
+        margin-bottom: 205rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__col {
+        &--side {
+            @include mixins.grid-col(2,6);
+        }
+
+        &--main {
+            @include mixins.grid-col(4,6);
+        }
+    }
+
+    &__list {
+        @include mixins.grid-row();
+        margin-bottom: -60rem;
+    }
+
+    &__item {
+        @include mixins.grid-col(3,6);
+        margin-bottom: 60rem;
+    }
+
+    &__year {
+        margin-bottom: 45rem;
+    }
+
+    &__subtitle {
+        opacity: .5;
+    }
+}
+
+.more-team {
+    @include mixins.body-s();
+
+    &__list {
+        @include mixins.grid-row();
+        margin-bottom: -60rem;
+    }
+
+    &__item {
+        @include mixins.grid-col(2,6);
+        margin-bottom: 60rem;
+    }
+
+    &__subtitle {
+        opacity: .5;
+    }
+}
+
+@media only screen and (hover: hover) {
+	.more-btn {
+		&:hover {
+			span {
+				border-color: transparent;
+			}
+		}
+	}
+
+    .more-clients {
+        &__link {
+            &:hover {
+                span {
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$medium) {
+    .more-content {
+        &__container {
+            padding-top: 45rem;
+        }
+
+        &__wrap {
+            padding-top: 45rem;
+        }
+    }
+
+    .more-clients {
+        &__wrap {
+            column-count: 3;
+        }
+
+        &__nav {
+            margin-bottom: 45rem;
+        }
+
+        &__block {
+            margin-bottom: 60rem;
+        }
+    }
+
+    .more-awards {
+        &__row {
+            margin-bottom: 160rem;
+        }
+
+        &__col {
+            @include mixins.grid-col(6,6);
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$small) {
+    .more-clients {
+        &__block {
+            margin-bottom: 50rem;
+        }
+    }
+
+    .more-awards {
+        &__row {
+            margin-bottom: 120rem;
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+    .more-content {
+        &__container {
+            padding-top: 20rem;
+        }
+
+        &__wrap {
+            padding-top: 20rem;
+        }
+    }
+
+    .more-clients {
+        &__nav {
+            margin-bottom: 30rem;
+        }
+
+        &__wrap {
+            column-count: 1;
+        }
+
+        &__block {
+            margin-bottom: 60rem;
+        }
+
+        &__title {
+            margin-bottom: 20rem;
+        }
+    }
+
+    .more-awards {
+        &__row {
+            margin-bottom: 30rem;
+        }
+
+        &__list {
+            margin-bottom: 0;
+        }
+
+        &__item {
+            margin-bottom: 30rem;
+            @include mixins.grid-col(6,6);
+
+            &:nth-child(odd) {
+                margin-bottom: 0;
+            }
+        }
+
+        &__year {
+            margin-bottom: 30rem;
+        }
+    }
+
+    .more-team {
+        &__list {
+            margin-bottom: 0;
+        }
+
+        &__item {
+            margin-bottom: 30rem;
+            @include mixins.grid-col(6,6);
+
+            &:nth-child(odd) {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

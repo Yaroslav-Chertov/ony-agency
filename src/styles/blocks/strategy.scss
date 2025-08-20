@@ -1,0 +1,200 @@
+@use "../partials/variable";
+@use "../partials/mixins";
+
+.strategy {
+    &__intro {
+        margin-bottom: 160rem;
+        @include mixins.indent-intro();
+
+        .intro {
+            &__title {
+                max-width: 100%;
+            }
+        }
+    }
+
+    &__heading {
+        margin-bottom: 160rem;
+    }
+
+    &__info {
+        margin-bottom: 160rem;
+
+        .infoblock {
+            &__text {
+                &.h2 {
+                    font-size: 55rem;
+                    line-height: 1.2;
+                }
+            }
+
+            &__links {
+                a {
+                    span {
+                        border-color: transparent;
+                    }
+                }
+            }
+        }
+
+        .advantages-card {
+            border-color: #d7d7d7;
+
+            &__text {
+                color: #999;
+                font-weight: 300;
+            }
+        }
+
+        .services-card {
+            &__content {
+                font-size: 35rem;
+                line-height: 1.2;
+            }
+
+            &__text {
+                margin: 0;
+            }
+        }
+    }
+
+    &__cases {
+        margin-bottom: 160rem;
+
+        .cases {
+            &__list {
+                margin-top: -65rem;
+            }
+
+            &__item {
+                margin-top: 65rem;
+            }
+        }
+    }
+
+    &__link {
+        .intro-block {
+            &.is-next {
+                .intro-block {
+                    &__head {
+                        align-items: flex-end;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (hover:hover) {
+    .strategy {
+        &__info {
+            .infoblock {
+                &__links {
+                    a {
+                        &:hover {
+                            span {
+                                border-color: #ccc;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$small) {
+    .strategy {
+        &__intro {
+            margin-bottom: 120rem;
+        }
+
+        &__info {
+            .infoblock {
+                &__title {
+                    font-size: 35rem;
+                }
+
+                &__text {
+                    &.h2 {
+                        font-size: 45rem;
+                        line-height: 1.1;
+                    }
+                }
+
+                &__links {
+                    font-size: 45rem;
+                }
+            }
+
+            .services-card {
+                &__top {
+                    font-size: 45rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+    .strategy {
+        &__intro {
+            margin-bottom: 80rem;
+        }
+
+        &__heading {
+            margin-bottom: 80rem;
+        }
+
+        &__info {
+            margin-bottom: 80rem;
+
+            .infoblock {
+                &__title {
+                    font-size: 17rem;
+                }
+
+                &__text {
+                    &.h2 {
+                        font-size: 17rem;
+                        line-height: 1.2;
+                    }
+                }
+
+                &--services {
+                    .infoblock {
+                        &__item {
+                            margin-bottom: 15rem;
+                        }
+                    }
+                }
+            }
+
+            .advantages {
+                &__list {
+                    margin-top: -45rem;
+                }
+
+                &__item {
+                    margin-top: 45rem;
+                }
+            }
+
+            .services-card {
+                &__top {
+                    font-size: 17rem;
+
+                    .svg-icon {
+                        width: 20rem;
+                        height: 20rem;
+                    }
+                }
+
+                &__content {
+                    font-size: 17rem;
+                    padding: 20rem 0;
+                }
+            }
+        }
+    }
+}

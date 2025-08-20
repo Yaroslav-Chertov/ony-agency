@@ -1,0 +1,79 @@
+@use "../partials/mixins";
+@use "../partials/variable";
+
+.process {
+    &__item {
+        margin-bottom: 20rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.process-step {
+    display: flex;
+    align-items: flex-start;
+
+    &__num {
+        width: 32rem;
+        margin-right: 60rem;
+        flex-shrink: 0;
+    }
+
+    &__content {
+        flex-grow: 1;
+    }
+
+    &__text {
+        color: #B2B2B2;
+    }
+}
+
+@media only screen and (max-width: variable.$small) {
+    .process {
+        &__list {
+            column-count: 2;
+            column-gap: 30rem;
+        }
+
+        &__item {
+            margin-bottom: 30rem;
+
+            &:last-child(-n+2) {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .process-step {
+        font-size: 17rem;
+        line-height: 22rem;
+
+        &__num {
+            width: 22rem;
+            margin-right: 22rem;
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+    .process {
+        &__list {
+            column-count: unset;
+            column-gap: unset;
+        }
+
+        &__item {
+            margin-bottom: 15rem;
+
+            &:last-child(2) {
+                margin-bottom: 15rem;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

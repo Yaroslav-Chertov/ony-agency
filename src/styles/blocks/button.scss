@@ -1,0 +1,80 @@
+@use "../partials/mixins";
+@use "../partials/variable";
+
+
+.button {
+    display: inline-flex;
+    color: currentColor;
+    background-color: transparent;
+    border: 1rem solid currentColor;
+    border-radius: 32rem;
+    padding: 11rem 36rem;
+    white-space: nowrap;
+    font-size: 19rem;
+    line-height: 26rem;
+    font-weight: 400;
+    transition: border-color .3s, color .3s;
+
+    &--inverse {
+        color: #fff;
+        background-color: #000;
+        border-color: transparent !important;
+    }
+}
+
+.btn-link {
+    display: inline-block;
+    color: currentColor;
+
+    span {
+        border-bottom: 1px solid transparent;
+        transition: border-color .3s;
+    }
+
+    &--icon {
+        font-size: 35rem;
+        display: inline-flex;
+        gap: 10rem;
+        align-items: center;
+    }
+
+    &--bb {
+        span {
+            border-color: currentColor;
+        }
+    }
+}
+
+@media only screen and (hover: hover) {
+    .button {
+        &:hover{
+            border-color: var(--grey);
+            color: var(--grey);
+        }
+    }
+
+    .btn-link {
+		&:hover {
+			span {
+				border-color: currentColor;
+			}
+		}
+
+        &--bb {
+            &:hover {
+                span {
+                    border-color: transparent;
+                }
+            }
+        }
+	}
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+    .btn-link {
+        &--icon {
+            font-size: 19px;
+            line-height: 1.3;
+        }
+    }
+}

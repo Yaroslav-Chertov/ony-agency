@@ -1,0 +1,5 @@
+{
+    "success": false,
+    "error": "EmailAlreadySubscribed",
+    "message": "Этот Email уже подписан на рассылку"
+}

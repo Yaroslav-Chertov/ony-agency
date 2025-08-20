@@ -1,0 +1,88 @@
+@use "../partials/mixins";
+@use "../partials/variable";
+
+.advantages {
+	&__container {
+		@include mixins.grid-container();
+	}
+
+	&__title {
+		margin-bottom: 70rem;
+	}
+
+	&__main {
+		width: calc((100% - var(--grid-gap)) / 6 * 4);
+		margin-left: auto;
+	}
+
+	&__list {
+		margin-top: -60rem;
+		@include mixins.grid-row();
+	}
+
+	&__item {
+		margin-top: 60rem;
+		@include mixins.grid-col(3,6);
+	}
+}
+
+.advantages-card {
+	padding-top: 30rem;
+	border-top: 1px solid currentColor;
+
+	&__subtitle {
+		font-size: 25rem;
+		margin-bottom: 30rem;
+	}
+
+	&__text {
+		font-size: 19rem;
+		line-height: 1.2;
+		color: #404040; //#565656 - in figma
+	}
+}
+
+@media only screen and (max-width: variable.$small) {
+	.advantages {
+		&__main {
+			width: 100%;
+		}
+	}
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+	.advantages {
+		&__title {
+			margin-bottom: 50rem;
+		}
+
+		&__main {
+			width: 100%;
+		}
+
+		&__list {
+			margin-top: -35rem;
+		}
+
+		&__item {
+			margin-top: 35rem;
+			@include mixins.grid-col(6,6);
+		}
+
+	}
+
+	.advantages-card {
+		padding-top: 15rem;
+
+		&__subtitle {
+			margin-bottom: 10rem;
+			font-size: 17rem;
+			line-height: 1.3;
+		}
+
+		&__text {
+			font-size: 17rem;
+			line-height: 1.3;
+		}
+	}
+}

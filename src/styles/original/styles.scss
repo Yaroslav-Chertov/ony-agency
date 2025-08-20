@@ -1,0 +1,16 @@
+@import "ony.ru.scss";
+@import "swiper-bundle.min.scss";
+
+.next-case {
+    transition: min-height .3s;
+}
+
+.bg-load-proj {
+    mix-blend-mode: difference;
+    left: 410px;
+    top: 400px;
+    right: auto;
+    bottom: auto;
+    z-index: 3000;
+    display: block;
+}

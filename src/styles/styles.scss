@@ -1,0 +1,68 @@
+@use "partials/reset.scss";
+@use "partials/variable.scss";
+@use "partials/mixins.scss";
+@use "partials/default.scss";
+@use "partials/fonts.scss";
+@use "partials/layout.scss";
+@use "blocks/debug.scss";
+
+@use "blocks/about.scss";
+@use "blocks/advantages.scss";
+@use "blocks/approach.scss";
+@use "blocks/audio.scss";
+@use "blocks/audiobranding.scss";
+@use "blocks/brand.scss";
+@use "blocks/branding.scss";
+@use "blocks/brief.scss";
+@use "blocks/bubbles.scss";
+@use "blocks/button.scss";
+@use "blocks/case.scss";
+@use "blocks/cases.scss";
+@use "blocks/checkbox.scss";
+@use "blocks/contacts.scss";
+@use "blocks/corpweb.scss";
+@use "blocks/digital.scss";
+@use "blocks/ecom.scss";
+@use "blocks/error.scss";
+@use "blocks/expertise.scss";
+@use "blocks/footer.scss";
+@use "blocks/form.scss";
+@use "blocks/header.scss";
+@use "blocks/heading.scss";
+@use "blocks/home.scss";
+@use "blocks/infoblock.scss";
+@use "blocks/infopage.scss";
+@use "blocks/intro.scss";
+@use "blocks/line-loader.scss";
+@use "blocks/logos.scss";
+@use "blocks/media.scss";
+@use "blocks/more.scss";
+@use "blocks/multibrands.scss";
+@use "blocks/nav.scss";
+@use "blocks/partners-logos.scss";
+@use "blocks/popup.scss";
+@use "blocks/product.scss";
+@use "blocks/process.scss";
+@use "blocks/ratings.scss";
+@use "blocks/reviews.scss";
+@use "blocks/rotator-cube.scss";
+@use "blocks/section.scss";
+@use "blocks/services-page.scss";
+@use "blocks/services.scss";
+@use "blocks/states.scss";
+@use "blocks/strategy.scss";
+@use "blocks/success-page.scss";
+@use "blocks/team.scss";
+@use "blocks/tech.scss";
+@use "blocks/technologies.scss";
+@use "blocks/video.scss";
+@use "blocks/work.scss";
+@use "blocks/join.scss";
+
+@use "blocks/sitemap.scss";
+
+/* @use '../../node_modules/tiny-slider/dist/tiny-slider.css'; */
+@use "../../node_modules/swiper/swiper-bundle.css";
+@use "blocks/slider.scss";
+
+/* @use './original/styles.scss'; */

@@ -1,0 +1,295 @@
+@use "variable";
+
+// Utils
+@mixin scrollbar($thumb: var(--grey), $track: transparent, $margin: 0rem) {
+	& {
+		scrollbar-width: thin;
+		scrollbar-color: $thumb $track;
+	}
+
+	&::-webkit-scrollbar {
+		width: 4rem;
+		height: 4rem;
+		border-radius: 2rem;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: $track;
+		border-radius: 2rem;
+		margin: $margin 0;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: $thumb;
+		border-radius: 2rem;
+	}
+}
+
+// font-face example - @include webfont('FF', 'ff');
+@mixin webfont($family, $file, $weight: normal, $style: normal) {
+	@font-face {
+		font-family: $family;
+		src: url('../fonts/' + $file + '.eot');
+		src: url('../fonts/' + $file + '.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/' + $file + '.woff') format('woff'),
+			 url('../fonts/' + $file + '.ttf') format('truetype'),
+			 url('../fonts/' + $file + '.svg') format('svg');
+		font-weight: $weight;
+		font-style: $style;
+		font-display: block;
+	}
+}
+
+// placeholder color
+@mixin placeholder($c) {
+	&::-webkit-input-placeholder {
+		color: $c;
+	}
+	&::-moz-placeholder {
+		color: $c;
+		opacity: 1;
+	}
+	&:-moz-placeholder {
+		color: $c;
+		opacity: 1;
+	}
+	&:-ms-input-placeholder {
+		color: $c;
+	}
+}
+
+// clearfix
+@mixin clearfix() {
+	&::before,
+	&::after {
+		display: block;
+		content: '';
+		height: 0;
+		overflow: hidden;
+		clear: both;
+	}
+}
+
+@mixin scrollbarClear() {
+	& {
+		scrollbar-width: thin;
+		scrollbar-color: transparent transparent;
+	}
+
+	&::-webkit-scrollbar {
+		width: 0rem;
+		height: 0rem;
+		border-radius: 0rem;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: transparent;
+		border-radius: 0rem;
+	}
+}
+
+
+//vertical stretch
+@mixin verticalStretch() {
+	display: flex;
+	flex-flow: column nowrap;
+	flex-grow: 1;
+}
+
+// clear button
+@mixin clearButton($font) {
+	background-color: transparent;
+	padding: 0;
+	border: none;
+	font-family: $font;
+}
+
+//grid
+/*$grid-gap: 22rem;*/
+
+@mixin grid-container() {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 calc(2 * var(--grid-gap));
+	max-width: 100%;
+}
+
+@mixin grid-row() {
+	display: flex;
+	flex-flow: row wrap;
+	margin-left: calc(-1 * var(--grid-gap));
+	margin-right: calc(-1 * var(--grid-gap));
+}
+
+@mixin grid-col($x:12, $y:12){
+	padding-right: var(--grid-gap);
+	padding-left: var(--grid-gap);
+	width: calc(($x/$y)*100%);
+}
+
+@mixin grid-offset-left($x:12, $y:12){
+	margin-left: calc(($x/$y)*100%);
+}
+
+@mixin grid-offset-right($x:12, $y:12){
+	margin-right: calc(($x/$y)*100%);
+}
+
+
+//fonts
+
+@mixin h1 {
+	font-size: 90rem;
+	line-height: 1.17; //105rem
+
+	@media only screen and (max-width: variable.$xlarge) {
+		font-size: 75rem;
+		line-height: 1.2; //90rem
+		letter-spacing: -0.02em;
+	}
+
+	@media only screen and (max-width: variable.$medium) {
+		font-size: 60rem;
+		line-height: 1.25; //75rem
+		letter-spacing: -0.02em;
+	}
+
+	@media only screen and (max-width: variable.$small) {
+		font-size: 50rem;
+		line-height: 1.2; //60rem
+		letter-spacing: -0.02em;
+	}
+
+	@media only screen and (max-width: variable.$xsmall) {
+		font-size: 30rem;
+		line-height: 1.17; //35rem
+		letter-spacing: 0;
+	}
+}
+
+@mixin h2 {
+	font-size: 55rem;
+	line-height: 1.1;
+	font-weight: 400;
+
+	@media only screen and (max-width: variable.$small) {
+		font-size: 45rem;
+	}
+
+	@media only screen and (max-width: variable.$xsmall) {
+		font-size: 30rem;
+	}
+}
+
+@mixin body-s {
+	font-size: 19rem;
+	line-height: 1.3; //25rem
+	font-weight: 400;
+
+	@media only screen and (max-width: variable.$small) {
+		font-size: 17rem; //line-height: 22rem;
+	}
+}
+
+@mixin body-m {
+	font-size: 35rem;
+	line-height: 1.14; //40rem
+	font-weight: 400;
+
+	@media only screen and (max-width: variable.$small) {
+		font-size: 17rem;
+		line-height: 1.3; //22rem
+	}
+}
+
+@mixin body-l {
+	font-size: 55rem;
+	line-height: 1.36; //75rem
+	letter-spacing: -0.02em;
+	font-weight: 400;
+
+	@media only screen and (max-width: variable.$normal) {
+		font-size: 50rem;
+		line-height: 1.4; //70rem
+		letter-spacing: 0;
+	}
+
+	@media only screen and (max-width: variable.$small) {
+		font-size: 35rem;
+		line-height: 1.29; //45rem
+	}
+
+	@media only screen and (max-width: variable.$xsmall) {
+		font-size: 17rem;
+		line-height: 1.47; //25rem
+	}
+}
+
+@mixin body-xl {
+	font-size: 60rem;
+	line-height: 1.25; //70rem
+	letter-spacing: -0.02em;
+	font-weight: 400;
+
+	@media only screen and (max-width: variable.$small) {
+		font-size: 35rem;
+		line-height: 1.29; //45rem
+	}
+
+	@media only screen and (max-width: variable.$xsmall) {
+		font-size: 17rem;
+		line-height: 1.47; //25rem
+	}
+}
+
+@mixin link-l {
+	font-size: 55rem;
+	line-height: 1.36; //75rem
+	letter-spacing: -0.02em;
+	font-weight: 400;
+
+	@media only screen and (max-width: variable.$normal) {
+		font-size: 50rem;
+		line-height: 1.4; //70rem
+		letter-spacing: 0;
+	}
+
+	@media only screen and (max-width: variable.$small) {
+		font-size: 35rem;
+		line-height: 1.29; //45rem
+	}
+
+	@media only screen and (max-width: variable.$xsmall) {
+		font-size: 30rem;
+		line-height: 1.33; //40rem
+	}
+}
+
+@mixin fontW {
+    font-family: variable.$font1;
+    font-size: 16rem;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+    font-weight: 400;
+    font-variant-numeric: lining-nums proportional-nums;
+}
+
+@mixin indent-intro {
+	padding-top: 120rem;
+
+	@media only screen and (max-width: variable.$large) {
+		padding-top: 80rem;
+	}
+
+	@media only screen and (max-width: variable.$small) {
+		padding-top: 60rem;
+	}
+
+	@media only screen and (max-width: variable.$xsmall) {
+		padding-top: 40rem;
+	}
+}

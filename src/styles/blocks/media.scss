@@ -1,0 +1,41 @@
+@use "../partials/mixins";
+@use "../partials/variable";
+
+.media {
+	&__container {
+		@include mixins.grid-container();
+	}
+
+	&__wrap {
+		padding: 45rem 0;
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	&__box {
+		width: 50%;
+
+		video,
+		img,
+		iframe {
+			width: 100%;
+			height: auto;
+		}
+
+		&:only-child {
+			width: 100%;
+		}
+	}
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+	.media {
+		&__wrap {
+			padding: 15rem 0;
+		}
+
+		&__box {
+			width: 100%;
+		}
+	}
+}

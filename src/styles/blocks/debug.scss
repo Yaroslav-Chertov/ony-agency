@@ -1,0 +1,66 @@
+@use "../partials/mixins";
+
+body {
+    &.is-debug {
+        .debug {
+            display: block;
+        }
+    }
+
+    &.is-debug-grid {
+        .debug-grid {
+            display: block;
+        }
+    }
+}
+
+.debug {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.debug-grid {
+    display: none;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    // background-color: #ff000022;
+
+    &__container {
+        height: 100%;
+        @include mixins.grid-container();
+    }
+
+    &__row {
+        height: 100%;
+        @include mixins.grid-row();
+    }
+
+    span {
+        display: flex;
+        @include mixins.grid-col(1, 12);
+    }
+
+    i {
+        flex-grow: 1;
+        height: 100%;
+        display: block;
+        background-color: var(--debug-grid-color); 
+    }
+}
+
+.debug-panel {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 105;
+
+    .tp-rotv {
+    }
+}

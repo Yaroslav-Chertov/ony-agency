@@ -1,0 +1,401 @@
+@use "../partials/mixins";
+@use "../partials/variable";
+
+.audiobranding {
+    &__intro {
+        @include mixins.indent-intro();
+
+        .intro {
+            &__title {
+                margin-bottom: 34rem;
+                max-width: 952rem;
+            }
+
+            &__image {
+                aspect-ratio: 1395 / 600;
+            }
+        }
+
+        + .audiobranding {
+            &__info {
+                margin-top: 40rem;
+
+                .audiobranding-info {
+                    &__title {
+                        margin-bottom: 30rem;
+                    }
+                }
+            }
+        }
+    }
+
+    &__cases {
+        margin-top: 170rem;
+
+        .cases {
+            &__list {
+                margin-top: -70rem;
+            }
+
+            &__item {
+                margin-top: 70rem;
+                @include mixins.grid-col(4,6);
+
+                &:nth-of-type(2) {
+                    margin-left: auto;
+                }
+
+                &:nth-of-type(3) {
+                    @include mixins.grid-col(3,6);
+					@include mixins.grid-offset-right(3,6);
+                }
+
+                &:nth-of-type(4) {
+					@include mixins.grid-offset-left(2,6);
+                    @include mixins.grid-col(2,6);
+                }
+
+                &:nth-of-type(5) {
+                    @include mixins.grid-col(2,6);
+                }
+            }
+        }
+
+        .case-card-static {
+            &__preview {
+                margin-bottom: 20rem;
+            }
+
+            &__subtitle {
+                transition: opacity .3s;
+            }
+        }
+    }
+
+    &__info {
+        margin-top: 120rem;
+    }
+
+    &__audio {
+        margin-top: 160rem;
+
+        + .audiobranding__info {
+            .audiobranding-info {
+                &__title {
+                    margin-bottom: 40rem;
+                }
+            }
+        }
+    }
+
+    &__reviews {
+        margin-top: 170rem;
+    }
+
+    &__form {
+        margin-top: 120rem;
+
+        .brief {
+            &__wrap {
+                padding: 50rem 0 85rem;
+            }
+
+            &__form {
+                margin-top: 90rem;
+            }
+        }
+    }
+}
+
+.audiobranding-info {
+    &__container {
+		@include mixins.grid-container();
+	}
+
+    &__main {
+        // margin-top: 110px;
+        width: calc((100% - var(--grid-gap)) / 12* 8);
+        margin-left: auto;
+    }
+
+    &__block {
+        margin-bottom: 120rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .case-card-static {
+            &__preview,
+            &__iframe {
+                margin-bottom: 20rem;
+            }
+
+            &__subtitle {
+                transition: opacity .3s;
+            }
+        }
+    }
+
+    &__title {
+        color: #565656;
+        margin-bottom: 20rem;
+        @include mixins.body-s();
+    }
+
+    &__description {
+        max-width: 87%;
+        @include mixins.h2();
+
+        & {
+            line-height: 1;
+            letter-spacing: -0.01em;
+        }
+    }
+
+    &__content {
+        ul {
+            li {
+                position: relative;
+                padding-left: 40rem;
+
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 30rem;
+                    height: 2rem;
+                    background-color: currentColor;
+                    position: absolute;
+                    left: 0;
+                    top: 20rem;
+                    margin-top: -1rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (hover: hover) {
+    .audiobranding {
+        &__cases {
+            a.case-card-static__subtitle {
+                &:hover {
+                    opacity: .7;
+                }
+            }
+        }
+    }
+
+    .audiobranding-info {
+        &__block {
+            a.case-card-static__subtitle {
+                &:hover {
+                    opacity: .7;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$small) {
+    .audiobranding {
+        .h2 {
+            line-height: 1;
+            letter-spacing: 0;
+        }
+
+        &__intro {
+            .intro {
+                &__title {
+                    margin-bottom: 30rem;
+                }
+            }
+
+            + .audiobranding {
+                &__info {
+                    .audiobranding-info {
+                        &__title {
+                            margin-bottom: 20rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__cases {
+            margin-top: 120rem;
+
+            .cases {
+                &__list {
+                    margin-top: -120rem;
+                }
+
+                &__item {
+                    margin-top: 120rem;
+                    @include mixins.grid-col(6,6);
+
+                    &:nth-of-type(2) {
+                        @include mixins.grid-col(5,6);
+                    }
+
+                    &:nth-of-type(3) {
+                        @include mixins.grid-col(5,6);
+                        @include mixins.grid-offset-right(1,6);
+                    }
+
+                    &:nth-of-type(4) {
+                        @include mixins.grid-col(6,6);
+                        @include mixins.grid-offset-left(0,6);
+                    }
+
+                    &:nth-of-type(5) {
+                        @include mixins.grid-col(5,6);
+                        @include mixins.grid-offset-left(1,6);
+                    }
+                }
+            }
+        }
+
+        &__audio {
+            + .audiobranding__info {
+                margin-top: 150rem;
+
+                .audiobranding-info {
+                    &__title {
+                        margin-bottom: 20rem;
+                    }
+                }
+            }
+        }
+
+        &__reviews {
+            margin-top: 160rem;
+        }
+
+        &__form {
+            margin-top: 90rem;
+
+            .brief {
+                &__form {
+                    margin-top: 70rem;
+                }
+            }
+        }
+    }
+
+    .audiobranding-info {
+        &__main {
+            width: 100%;
+        }
+
+        &__description {
+            max-width: 100%;
+        }
+
+        &__content {
+            //font-size: 25rem;
+
+            ul {
+                li {
+                    padding-left: 30rem;
+
+                    &::before {
+                        width: 20rem;
+                        top: 16rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+    .audiobranding {
+        &__intro {
+            .intro {
+                &__image {
+                    aspect-ratio: 375 / 250;
+                }
+            }
+
+            + .audiobranding {
+                &__info {
+                    margin-top: 20rem;
+                }
+            }
+        }
+
+        &__cases {
+            margin-top: 110rem;
+
+            .cases {
+                &__list {
+                    margin-top: -60rem;
+                }
+
+                &__item {
+                    margin-top: 60rem;
+                }
+            }
+        }
+
+        &__info {
+            margin-top: 95rem;
+        }
+
+        &__audio {
+            margin-top: 110rem;
+
+            + .audiobranding__info {
+                margin-top: 120rem;
+            }
+        }
+
+        &__reviews {
+            margin-top: 140rem;
+        }
+
+        &__form {
+            margin-top: 110rem;
+
+            .brief {
+                &__wrap {
+                    padding: 20rem 0 85rem;
+                }
+
+                &__form {
+                    margin-top: 50rem;
+                }
+            }
+        }
+    }
+
+    .audiobranding-info {
+        &__description {
+            font-size: 30rem;
+            line-height: 35rem;
+            letter-spacing: 0;
+        }
+
+        &__main {
+            width: 100%;
+            margin-top: 75rem;
+        }
+
+        &__content {
+            font-size: 17rem;
+            line-height: 22rem;
+
+            ul {
+                li {
+                    padding-left: 22rem;
+
+                    &::before {
+                        width: 15rem;
+                        top: 12rem;
+                    }
+                }
+            }
+        }
+    }
+}

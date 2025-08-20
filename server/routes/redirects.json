@@ -1,0 +1,707 @@
+[
+    {
+        "from": "/brief.html",
+        "to": "/brief",
+        "statusCode": 301
+    },
+    {
+        "from": "/2x2",
+        "to": "/work/2x2",
+        "statusCode": 301
+    },
+    {
+        "from": "/9-18",
+        "to": "/work/9-18",
+        "statusCode": 301
+    },
+    {
+        "from": "/a-security",
+        "to": "/work/a-security",
+        "statusCode": 301
+    },
+    {
+        "from": "/abkr",
+        "to": "/work/abkr",
+        "statusCode": 301
+    },
+    {
+        "from": "/acronis",
+        "to": "/work/acronis",
+        "statusCode": 301
+    },
+    {
+        "from": "/adcr",
+        "to": "/work/adcr",
+        "statusCode": 301
+    },
+    {
+        "from": "/almatel",
+        "to": "/work/almatel",
+        "statusCode": 301
+    },
+    {
+        "from": "/asteros",
+        "to": "/work/asteros",
+        "statusCode": 301
+    },
+    {
+        "from": "/atlas",
+        "to": "/work/atlas",
+        "statusCode": 301
+    },
+    {
+        "from": "/attack",
+        "to": "/work/attack",
+        "statusCode": 301
+    },
+    {
+        "from": "/avito",
+        "to": "/work/avito",
+        "statusCode": 301
+    },
+    {
+        "from": "/ayyo",
+        "to": "/work/ayyo",
+        "statusCode": 301
+    },
+    {
+        "from": "/az-digital",
+        "to": "/work/az-digital",
+        "statusCode": 301
+    },
+    {
+        "from": "/az-shop",
+        "to": "/work/az-shop",
+        "statusCode": 301
+    },
+    {
+        "from": "/beru",
+        "to": "/work/beru",
+        "statusCode": 301
+    },
+    {
+        "from": "/bright-capital",
+        "to": "/work/bright-capital",
+        "statusCode": 301
+    },
+    {
+        "from": "/carcade",
+        "to": "/work/carcade",
+        "statusCode": 301
+    },
+    {
+        "from": "/carlo-pazolini",
+        "to": "/work",
+        "statusCode": 301
+    },
+    {
+        "from": "/carlo-pazolini-responsive",
+        "to": "/work/carlo-pazolini-responsive",
+        "statusCode": 301
+    },
+    {
+        "from": "/choza",
+        "to": "/work/choza",
+        "statusCode": 301
+    },
+    {
+        "from": "/clever-business",
+        "to": "/work/clever-business",
+        "statusCode": 301
+    },
+    {
+        "from": "/clockwork",
+        "to": "/work/clockwork",
+        "statusCode": 301
+    },
+    {
+        "from": "/digital-october",
+        "to": "/work/digital-october",
+        "statusCode": 301
+    },
+    {
+        "from": "/ph-d-house-8",
+        "to": "/work/ph-d-house-8",
+        "statusCode": 301
+    },
+    {
+        "from": "/fabrika-okon",
+        "to": "/work/fabrika-okon",
+        "statusCode": 301
+    },
+    {
+        "from": "/flacon",
+        "to": "/work/flacon",
+        "statusCode": 301
+    },
+    {
+        "from": "/flacon-digital",
+        "to": "/work/flacon-digital",
+        "statusCode": 301
+    },
+    {
+        "from": "/fourmuseums",
+        "to": "/work/fourmuseums",
+        "statusCode": 301
+    },
+    {
+        "from": "/friends",
+        "to": "/work/friends",
+        "statusCode": 301
+    },
+    {
+        "from": "/futubra",
+        "to": "/work/futubra",
+        "statusCode": 301
+    },
+    {
+        "from": "/future-london-academy",
+        "to": "/work/future-london-academy",
+        "statusCode": 301
+    },
+    {
+        "from": "/garage",
+        "to": "/work/garage",
+        "statusCode": 301
+    },
+    {
+        "from": "/garagead",
+        "to": "/work/garagead",
+        "statusCode": 301
+    },
+    {
+        "from": "/gazprom-media",
+        "to": "/work/gazprom-media",
+        "statusCode": 301
+    },
+    {
+        "from": "/goldapple",
+        "to": "/work/goldapple",
+        "statusCode": 301
+    },
+    {
+        "from": "/golfstream",
+        "to": "/work/golfstream",
+        "statusCode": 301
+    },
+    {
+        "from": "/gorovoy",
+        "to": "/work/gorovoy",
+        "statusCode": 301
+    },
+    {
+        "from": "/gulifstream",
+        "to": "/work/gulifstream",
+        "statusCode": 301
+    },
+    {
+        "from": "/gulliver",
+        "to": "/work/gulliver",
+        "statusCode": 301
+    },
+    {
+        "from": "/gulliver-market",
+        "to": "/work/gulliver-market",
+        "statusCode": 301
+    },
+    {
+        "from": "/hyperlens",
+        "to": "/work/hyperlens",
+        "statusCode": 301
+    },
+    {
+        "from": "/igooods",
+        "to": "/work/igooods",
+        "statusCode": 301
+    },
+    {
+        "from": "/intuition",
+        "to": "/work/intuition",
+        "statusCode": 301
+    },
+    {
+        "from": "/kia-ru",
+        "to": "/work/kia-ru",
+        "statusCode": 301
+    },
+    {
+        "from": "/knowledge-stream",
+        "to": "/work/knowledge-stream",
+        "statusCode": 301
+    },
+    {
+        "from": "/kvyat",
+        "to": "/work/kvyat",
+        "statusCode": 301
+    },
+    {
+        "from": "/lime",
+        "to": "/work/lime",
+        "statusCode": 301
+    },
+    {
+        "from": "/m-video-new",
+        "to": "/work/m-video-new",
+        "statusCode": 301
+    },
+    {
+        "from": "/mango",
+        "to": "/work/mango",
+        "statusCode": 301
+    },
+    {
+        "from": "/mango-telecom",
+        "to": "/work/mango-telecom",
+        "statusCode": 301
+    },
+    {
+        "from": "/match-tv",
+        "to": "/work/match-tv",
+        "statusCode": 301
+    },
+    {
+        "from": "/mccann",
+        "to": "/work/mccann",
+        "statusCode": 301
+    },
+    {
+        "from": "/mdm-bank",
+        "to": "/work/mdm-bank",
+        "statusCode": 301
+    },
+    {
+        "from": "/media1",
+        "to": "/work/media1",
+        "statusCode": 301
+    },
+    {
+        "from": "/medsi",
+        "to": "/work/medsi",
+        "statusCode": 301
+    },
+    {
+        "from": "/megafon",
+        "to": "/work/megafon",
+        "statusCode": 301
+    },
+    {
+        "from": "/megafon-app-store",
+        "to": "/work/megafon-app-store",
+        "statusCode": 301
+    },
+    {
+        "from": "/megafon-b2b",
+        "to": "/work/megafon-b2b",
+        "statusCode": 301
+    },
+    {
+        "from": "/megafon-digital",
+        "to": "/work/megafon-digital",
+        "statusCode": 301
+    },
+    {
+        "from": "/megafon-lichnyj-kabinet",
+        "to": "/work/megafon-lichnyj-kabinet",
+        "statusCode": 301
+    },
+    {
+        "from": "/megafon-metricell",
+        "to": "/work/megafon-metricell",
+        "statusCode": 301
+    },
+    {
+        "from": "/megafon-site",
+        "to": "/work/megafon-site",
+        "statusCode": 301
+    },
+    {
+        "from": "/megafon-tv",
+        "to": "/work/megafon-tv",
+        "statusCode": 301
+    },
+    {
+        "from": "/montegrappa",
+        "to": "/work/montegrappa",
+        "statusCode": 301
+    },
+    {
+        "from": "/museum-az",
+        "to": "/work/museum-az",
+        "statusCode": 301
+    },
+    {
+        "from": "/my-com",
+        "to": "/work/my-com",
+        "statusCode": 301
+    },
+    {
+        "from": "/nabokov",
+        "to": "/work/nabokov",
+        "statusCode": 301
+    },
+    {
+        "from": "/pic-kvyat",
+        "to": "/work/pic-kvyat",
+        "statusCode": 301
+    },
+    {
+        "from": "/nimb",
+        "to": "/work/nimb",
+        "statusCode": 301
+    },
+    {
+        "from": "/norilsk-film",
+        "to": "/work/norilsk-film",
+        "statusCode": 301
+    },
+    {
+        "from": "/novatek",
+        "to": "/work/novatek",
+        "statusCode": 301
+    },
+    {
+        "from": "/okolo",
+        "to": "/work/okolo",
+        "statusCode": 301
+    },
+    {
+        "from": "/open",
+        "to": "/work/open",
+        "statusCode": 301
+    },
+    {
+        "from": "/ozon-travel",
+        "to": "/work/ozon-travel",
+        "statusCode": 301
+    },
+    {
+        "from": "/p-h-d",
+        "to": "/work/p-h-d",
+        "statusCode": 301
+    },
+    {
+        "from": "/p-nimb",
+        "to": "/work/p-nimb",
+        "statusCode": 301
+    },
+    {
+        "from": "/ph-d",
+        "to": "/work/ph-d",
+        "statusCode": 301
+    },
+    {
+        "from": "/ph-d-book",
+        "to": "/work/ph-d-book",
+        "statusCode": 301
+    },
+    {
+        "from": "/pic-hyperverse",
+        "to": "/work/pic-hyperverse",
+        "statusCode": 301
+    },
+    {
+        "from": "/pic-t",
+        "to": "/work/pic-t",
+        "statusCode": 301
+    },
+    {
+        "from": "/pic-waves",
+        "to": "/work/pic-waves",
+        "statusCode": 301
+    },
+    {
+        "from": "/pic-yandext",
+        "to": "/work/pic-yandext",
+        "statusCode": 301
+    },
+    {
+        "from": "/pic-younom",
+        "to": "/work/pic-younom",
+        "statusCode": 301
+    },
+    {
+        "from": "/playrix",
+        "to": "/work/playrix",
+        "statusCode": 301
+    },
+    {
+        "from": "/pomosch",
+        "to": "/work/pomosch",
+        "statusCode": 301
+    },
+    {
+        "from": "/port-ole",
+        "to": "/work/port-ole",
+        "statusCode": 301
+    },
+    {
+        "from": "/power",
+        "to": "/work/power",
+        "statusCode": 301
+    },
+    {
+        "from": "/pride",
+        "to": "/work/pride",
+        "statusCode": 301
+    },
+    {
+        "from": "/progress-bar",
+        "to": "/work/progress-bar",
+        "statusCode": 301
+    },
+    {
+        "from": "/raiffeisen-career",
+        "to": "/work/raiffeisen-career",
+        "statusCode": 301
+    },
+    {
+        "from": "/raiffeisen-dgtl",
+        "to": "/work/raiffeisen-dgtl",
+        "statusCode": 301
+    },
+    {
+        "from": "/rambler",
+        "to": "/work/rambler",
+        "statusCode": 301
+    },
+    {
+        "from": "/rambler-co",
+        "to": "/work/rambler-co",
+        "statusCode": 301
+    },
+    {
+        "from": "/ramblerandco",
+        "to": "/work/ramblerandco",
+        "statusCode": 301
+    },
+    {
+        "from": "/rechtswissenschaft",
+        "to": "/work/rechtswissenschaft",
+        "statusCode": 301
+    },
+    {
+        "from": "/red",
+        "to": "/work/red",
+        "statusCode": 301
+    },
+    {
+        "from": "/red-ru",
+        "to": "/work/red-ru",
+        "statusCode": 301
+    },
+    {
+        "from": "/rukami",
+        "to": "/work/rukami",
+        "statusCode": 301
+    },
+    {
+        "from": "/s7-airlines",
+        "to": "/work/s7-airlines",
+        "statusCode": 301
+    },
+    {
+        "from": "/samolet",
+        "to": "/work/samolet",
+        "statusCode": 301
+    },
+    {
+        "from": "/samsung-gear-s2",
+        "to": "/work/samsung-gear-s2",
+        "statusCode": 301
+    },
+    {
+        "from": "/sanduny",
+        "to": "/work/sanduny",
+        "statusCode": 301
+    },
+    {
+        "from": "/savvin",
+        "to": "/work/savvin",
+        "statusCode": 301
+    },
+    {
+        "from": "/sbercloud",
+        "to": "/work/sbercloud",
+        "statusCode": 301
+    },
+    {
+        "from": "/sberdevices",
+        "to": "/work/sberdevices",
+        "statusCode": 301
+    },
+    {
+        "from": "/skoda-superb",
+        "to": "/work/skoda-superb",
+        "statusCode": 301
+    },
+    {
+        "from": "/skylink",
+        "to": "/work/skylink",
+        "statusCode": 301
+    },
+    {
+        "from": "/soyuzmult",
+        "to": "/work/soyuzmult",
+        "statusCode": 301
+    },
+    {
+        "from": "/start",
+        "to": "/work/start",
+        "statusCode": 301
+    },
+    {
+        "from": "/t-brand",
+        "to": "/work/t-brand",
+        "statusCode": 301
+    },
+    {
+        "from": "/t-site",
+        "to": "/work/t-site",
+        "statusCode": 301
+    },
+    {
+        "from": "/tcs-bank",
+        "to": "/work/tcs-bank",
+        "statusCode": 301
+    },
+    {
+        "from": "/telecom-express",
+        "to": "/work/telecom-express",
+        "statusCode": 301
+    },
+    {
+        "from": "/tervolina",
+        "to": "/work/tervolina",
+        "statusCode": 301
+    },
+    {
+        "from": "/the-games",
+        "to": "/work/the-games",
+        "statusCode": 301
+    },
+    {
+        "from": "/tinkoff",
+        "to": "/work/tinkoff",
+        "statusCode": 301
+    },
+    {
+        "from": "/trekhgorka",
+        "to": "/work/trekhgorka",
+        "statusCode": 301
+    },
+    {
+        "from": "/twig",
+        "to": "/work/twig",
+        "statusCode": 301
+    },
+    {
+        "from": "/twig-site",
+        "to": "/work/twig-site",
+        "statusCode": 301
+    },
+    {
+        "from": "/uralsib-insurance",
+        "to": "/work/uralsib-insurance",
+        "statusCode": 301
+    },
+    {
+        "from": "/vmetro",
+        "to": "/work/vmetro",
+        "statusCode": 301
+    },
+    {
+        "from": "/volga-films",
+        "to": "/work/volga-films",
+        "statusCode": 301
+    },
+    {
+        "from": "/waves",
+        "to": "/work/waves",
+        "statusCode": 301
+    },
+    {
+        "from": "/yandex-go",
+        "to": "/work/yandex-go",
+        "statusCode": 301
+    },
+    {
+        "from": "/yandex-taxi",
+        "to": "/work/yandex-taxi",
+        "statusCode": 301
+    },
+    {
+        "from": "/yandex-uslugi",
+        "to": "/work/yandex-uslugi",
+        "statusCode": 301
+    },
+    {
+        "from": "/yarky",
+        "to": "/work/yarky",
+        "statusCode": 301
+    },
+    {
+        "from": "/yota-space",
+        "to": "/work/yota-space",
+        "statusCode": 301
+    },
+    {
+        "from": "/yotaphone",
+        "to": "/work/yotaphone",
+        "statusCode": 301
+    },
+    {
+        "from": "/youla",
+        "to": "/work/youla",
+        "statusCode": 301
+    },
+    {
+        "from": "/younom",
+        "to": "/work/younom",
+        "statusCode": 301
+    },
+    {
+        "from": "/zolla",
+        "to": "/work/zolla",
+        "statusCode": 301
+    },
+    {
+        "from": "/bonaqua",
+        "to": "/work/bonaqua",
+        "statusCode": 301
+    },
+    {
+        "from": "/bushe",
+        "to": "/work/bushe",
+        "statusCode": 301
+    },
+    {
+        "from": "/epica",
+        "to": "/work/epica",
+        "statusCode": 301
+    },
+    {
+        "from": "/lime-strategy",
+        "to": "/work/lime-strategy",
+        "statusCode": 301
+    },
+    {
+        "from": "/miro",
+        "to": "/work/miro",
+        "statusCode": 301
+    },
+    {
+        "from": "/soyuzmultfilm",
+        "to": "/work/soyuzmultfilm",
+        "statusCode": 301
+    },
+    {
+        "from": "/spb-exchange",
+        "to": "/work/spb-exchange",
+        "statusCode": 301
+    },
+    {
+        "from": "/x5-group",
+        "to": "/work/x5-group",
+        "statusCode": 301
+    }
+]

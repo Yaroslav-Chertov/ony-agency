@@ -1,0 +1,159 @@
+@use "mixins";
+@use "variable";
+
+body {
+    &.is-loading {
+        .main {
+            // will-change: transform;
+            // transform: translateY(-20px);
+        }
+
+        .body-loader {
+            will-change: opacity;
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+
+    &.is-header-loader {
+
+        .line-loader {
+            opacity: 0;
+            transform: scaleY(1);
+        }
+    }
+
+    &.is-nav {
+        &::before {
+            opacity: 1;
+            // backdrop-filter: blur(100px);
+        }
+    }
+
+    &::before {
+        pointer-events: none;
+        content: '';
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 95;
+        backdrop-filter: blur(100px);
+        opacity: 0;
+        will-change: opacity;
+        transition: opacity 0.3s;
+        
+        // backdrop-filter: blur(0px);
+        // transition: opacity 0.3s, backdrop-filter .4s;
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    min-height: 100%;
+}
+
+.main {
+    position: relative;
+    z-index: 2;
+    transition: transform .9s;
+}
+
+.main {
+    @include mixins.verticalStretch();
+}
+
+.header + .main {
+    // margin-top: var(--header-min-height);
+    padding-top: var(--header-min-height);
+}
+
+.inverse {
+    --color: #ffffff;
+	--background-color: #000000;
+    color: var(--color);
+    background-color: var(--background-color);
+}
+
+.inverse-body {
+    background-color: #000;
+}
+
+.body-loader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 200;
+    opacity: 0;
+    pointer-events: none;
+    background-color: #fff;
+    transition: opacity .9s;
+}
+
+.static {
+    .case {
+        &__block {
+            &:last-child {
+                margin: 120rem 0;
+            }
+        }
+    }
+}
+
+.is-hidden {
+    display: none;
+}
+
+.is-overflow {
+    overflow: hidden;
+}
+
+.h1 {
+    @include mixins.h1();
+}
+
+.h2 {
+    @include mixins.h2();
+}
+
+.body-s {
+    @include mixins.body-s();
+}
+
+.body-m {
+    @include mixins.body-m();
+}
+
+.body-l {
+    @include mixins.body-l();
+}
+
+a.brief-btn {
+    position: fixed;
+    bottom: 20rem;
+    right: calc(2 * var(--grid-gap));
+    z-index: 10;
+    padding: 11rem 24rem;
+    line-height: 25rem;
+    transition: background-color .3s;
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+    a.brief-btn {
+        bottom: 10rem;
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
+@media only screen and (hover: hover) {
+    a.brief-btn:hover {
+        color: var(--white);
+        background-color: var(--grey);
+    }
+}

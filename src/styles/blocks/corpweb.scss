@@ -1,0 +1,177 @@
+@use "../partials/mixins";
+@use "../partials/variable";
+
+.corpweb {
+    &__intro {
+        margin-bottom: 44rem;
+        @include mixins.indent-intro();
+    }
+
+    &__info {
+        margin-bottom: 160rem;
+
+        .infoblock {
+            &__item {
+				border-bottom: 1px solid #ccc;
+
+				&:first-child {
+					border-top: 1px solid #ccc;
+				}
+			}
+
+            &__numbers {
+                margin-top: 80rem;
+            }
+		}
+
+        .info-num {
+            &__list {
+                margin-top: -80rem;
+            }
+
+            &__item {
+                margin-top: 80rem;
+            }
+        }
+
+        .infoblock-card {
+            &__content {
+                padding: 0 100rem 40rem 0;
+                max-width: 100%;
+            }
+        }
+    }
+
+    &__media {
+        .media {
+            &__wrap {
+                padding-top: 0;
+            }
+        }
+    }
+
+    &__cases,
+    &__ratings,
+    &__reviews {
+        margin-bottom: 160rem;
+    }
+
+    &__ratings {
+        .ratings {
+            &__item {
+                border-color: #ccc;
+            }
+        }
+
+        .ratings-card {
+            &__num,
+            &__source {
+                color: #ccc;
+            }
+        }
+    }
+
+    &__form {
+        .brief {
+            &__wrap {
+                padding: 40rem 0 100rem;
+            }
+
+            &__title {
+                margin-bottom: 90rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$small) {
+    .corpweb {
+        &__info {
+            margin-bottom: 120rem;
+
+            .infoblock {
+                &__numbers {
+                    margin-top: 60rem;
+                }
+            }
+
+            .info-num {
+                &__list {
+                    margin-top: -60rem;
+                }
+
+                &__item {
+                    margin-top: 60rem;
+                }
+            }
+        }
+
+        &__cases,
+        &__ratings,
+        &__reviews {
+            margin-bottom: 120rem;
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+    .corpweb {
+        &__info {
+            margin-bottom: 80rem;
+
+            .infoblock {
+                &__title {
+                    font-size: 30rem;
+                    line-height: 1.17;
+                    margin-bottom: 18rem;
+                }
+
+                &__list {
+                    margin-top: 34rem;
+                }
+
+                &__numbers {
+                    margin-top: 40rem;
+                }
+            }
+
+            .infoblock-card {
+                &__content {
+                    padding-right: 40rem;
+                }
+            }
+
+            .info-num {
+                &__list {
+                    margin-top: -40rem;
+                }
+
+                &__item {
+                    margin-top: 40rem;
+                }
+
+                &__title {
+                    font-size: 30rem;
+                }
+            }
+        }
+
+        &__cases,
+        &__ratings,
+        &__reviews {
+            margin-bottom: 80rem;
+        }
+
+        &__form {
+            .brief {
+                &__title {
+                    margin-bottom: 50rem;
+                }
+
+                &__form {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}

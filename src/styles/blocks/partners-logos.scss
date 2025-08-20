@@ -1,0 +1,80 @@
+@use "../partials/mixins";
+@use "../partials/variable";
+
+.partners-logos {
+    background-color: #000;
+    color: #fff;
+    padding: 25rem 0;
+
+    &__track {
+        display: flex;
+        width: 100%;
+    }
+
+    &__line {
+        display: flex;
+        width: auto;
+        flex-shrink: 0;
+        overflow: hidden;
+        align-items: center;
+        animation: move 30s linear infinite;
+    }
+
+    &__container {
+		@include mixins.grid-container();
+	}
+
+    &__list {
+        /* display: flex;
+        justify-content: space-between;
+        gap: 45rem; */
+        /* display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 80rem;
+        column-gap: 45rem;
+        column-gap: calc(2 * var(--grid-gap));
+        justify-content: center; */
+    }
+
+    &__item {
+        flex-grow: 1;
+        min-width: 300rem;
+        margin: 0 20rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            max-height: 52rem;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$small) {
+    .partners-logos {
+        &__item {
+            min-width: 200rem;
+        }
+    }
+
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+    .partners-logos {
+        &__item {
+            min-width: 150rem;
+        }
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}

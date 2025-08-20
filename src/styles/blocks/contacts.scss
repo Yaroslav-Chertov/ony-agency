@@ -1,0 +1,145 @@
+@use "../partials/mixins";
+@use "../partials/variable";
+
+.contacts {
+    &__container {
+		@include mixins.grid-container();
+	}
+
+    &__wrap {
+        padding-bottom: 155rem;
+        @include mixins.indent-intro();
+    }
+
+    &__info {
+        margin-bottom: 45rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.contact-infoblock {
+    @include mixins.grid-row();
+
+    dt {
+        @include mixins.grid-col(2,6);
+
+        h3 {
+            margin-bottom: 15rem;
+        }
+    }
+
+    dd {
+        @include mixins.grid-col(4,6);
+    }
+
+
+    &__link {
+        line-height: 1.3;
+
+        span {
+            border-bottom: 1px solid transparent;
+            transition: border-color .3s, opacity .3s;
+        }
+
+        &--underline {
+            span {
+                border-color: currentColor;
+            }
+        }
+    }
+}
+
+@media only screen and (hover: hover) {
+    .contact-infoblock {
+        &__link {
+            &:hover {
+                span {
+                    opacity: .7;
+                }
+            }
+
+            /* &--underline {
+                &:hover {
+                    span {
+                        border-color: transparent;
+                    }
+                }
+            } */
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$small) {
+    .contacts {
+        &__wrap {
+            padding-bottom: 80rem;
+        }
+
+        &__info {
+            margin-bottom: 40rem;
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+    .contacts {
+        &__wrap {
+            padding-bottom: 70rem;
+        }
+    }
+
+    .contact-infoblock {
+        dt, dd {
+            @include mixins.grid-col(6,6);
+        }
+    }
+}
+
+/* WARN: API FIX STYLES ->*/
+.contacts {
+    &__info {
+        &:last-child {
+            .w-inline-block {
+                border-bottom: 1px solid currentColor;
+            }
+        }
+    }
+}
+
+.contact-infoblock {
+    dd {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .w-inline-block {
+            &:first-child:not(:only-child) {
+                border-bottom: 1px solid currentColor;
+            }
+        }
+    }
+}
+
+.w-inline-block {
+    transition: border-color .3s, opacity .3s;
+}
+
+@media only screen and (hover: hover) {
+    .contact-infoblock {
+        .w-inline-block {
+            &:hover {
+                border-color: transparent;
+            }
+
+            &:first-child:not(:only-child) {
+                &:hover {
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+/* WARN: API FIX STYLES <-*/

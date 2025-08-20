@@ -1,0 +1,57 @@
+{
+    "name": "ony-jtsx",
+    "version": "0.1.0",
+    "main": "index.js",
+    "type": "module",
+    "imports": {
+        "#@/*": "./src/*",
+        "#_/*": "./*"
+    },
+    "engines": {
+        "node": ">=20.15.1 <23"
+    },
+    "scripts": {
+        "dev": "nodemon --config ./.dev/nodemon.json --env-file=.env --import jtsx-loader ./gulp.dev.js dev ./server/app.js",
+        "debug": "nodemon --config ./.dev/nodemon.json --env-file=.env --import jtsx-loader ./gulp.dev.js dev",
+        "start": "node --env-file=.env --import jtsx-loader ./gulp.dev.js start ./server/app.js",
+        "build": "node --env-file=.env --import jtsx-loader ./gulp.dev.js build --prod",
+        "server": "node --env-file=.env --import jtsx-loader ./gulp.dev.js server ./server/app.js",
+        "preview": "nodemon --config ./.dev/nodemon.json --env-file=.env --import jtsx-loader ./gulp.dev.js preview ./server/app.js"
+    },
+    "keywords": [],
+    "author": "Dergachev Mihail <dergachev.mihail@gmail.com>",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "body-parser": "^1.20.2",
+        "cookie-parser": "^1.4.6",
+        "dotenv": "^16.4.7",
+        "express": "^4.19.2",
+        "express-fileupload": "^1.5.1",
+        "helmet": "^8.0.0",
+        "htmlfy": "^0.6.1",
+        "idiomorph": "^0.7.3",
+        "inputmask": "^5.0.9",
+        "lottie-web": "^5.12.2",
+        "morphdom": "^2.7.4",
+        "swiper": "^11.2.6",
+        "telegraf": "^4.16.3",
+        "tiny-slider": "^2.9.4",
+        "tweakpane": "^4.0.5",
+        "validator": "^13.12.0"
+    },
+    "devDependencies": {
+        "chalk": "^5.4.1",
+        "esbuild": "^0.25.0",
+        "eslint": "^9.21.0",
+        "eslint-plugin-jsx-a11y": "^6.10.2",
+        "gulp": "^5.0.0",
+        "gulp-sass": "^6.0.1",
+        "jtsx-loader": "^0.1.7",
+        "minimist": "^1.2.8",
+        "nodemon": "^3.1.9",
+        "sass": "^1.85.1",
+        "tsx": "^4.19.2",
+        "ws": "^8.18.1"
+    }
+}

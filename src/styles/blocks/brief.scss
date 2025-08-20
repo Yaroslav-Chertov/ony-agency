@@ -1,0 +1,129 @@
+@use "../partials/mixins";
+@use "../partials/variable";
+
+.brief {
+    background-color: var(--background-color);
+
+    &__container {
+		@include mixins.grid-container();
+	}
+
+    &__wrap {
+        padding-bottom: 50rem;
+        @include mixins.indent-intro();
+    }
+
+    &__title {
+
+        a {
+			span {
+				border-bottom: 1px solid currentColor;
+				transition: border-color .3s;
+			}
+        }
+    }
+
+    &__description {
+        font-size: 19rem;
+        font-weight: 400;
+        line-height: 25.65rem;
+        max-width: 900rem;
+        margin-top: 40rem;
+
+        + .brief__form {
+            margin-top: 60px;
+        }
+    }
+
+    &__form {
+        width: calc((100% - var(--grid-gap)) / 12* 8);
+        margin-top: 20rem;
+    }
+
+    &--content {
+        .brief {
+            &__wrap {
+                padding: 245rem 0;
+            }
+
+            &__title {
+                margin-bottom: 0;
+
+                a {
+                    border-bottom: 1px solid #000;
+                    transition: border-color .3s;
+                }
+            }
+        }
+    }
+
+    &.inverse {
+        .brief__title a {
+            border-bottom-color: currentColor;
+        }
+    }
+}
+
+@media only screen and (hover: hover) {
+	.brief {
+		&__title {
+			a {
+				&:hover {
+					span {
+						border-color: transparent;
+					}
+				}
+			}
+		}
+
+        &--content {
+            .brief__title a {
+                &:hover {
+                    border-color: transparent;
+				}
+            }
+        }
+	}
+}
+
+@media only screen and (max-width: variable.$small) {
+    .brief {
+        &__title {
+            margin-bottom: 45rem;
+        }
+
+        &__form {
+            width: 100%;
+        }
+
+        &--content {
+            .brief {
+                &__wrap {
+                    padding: 140rem 0;
+                }
+
+                &__title {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+    .brief {
+        &--content {
+            .brief {
+                &__wrap {
+                    padding: 70rem 0;
+                }
+
+                &__title {
+                    br {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

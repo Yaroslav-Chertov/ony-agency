@@ -1,0 +1,17 @@
+User-Agent: *
+Disallow: /?
+Disallow: *?ref=
+Disallow: *?url=
+Disallow: *?prev_work_id=
+Disallow: *?__hstc=
+Disallow: *etext=
+Disallow: /*.pdf
+Disallow: /*.xls
+Disallow: /*.doc
+Disallow: /*.ppt
+
+Clean-param: utm_campaing&utm_candidate&utm_partner_id&utm_referer&utm_referrer&utm_source_service&utm_ya_campaign&y_ref&yclyd&yhic&yhid&baobab_event_id&parent-baobab-id&etext&ypppel
+
+Sitemap: https://ony.ru/sitemap.xml
+
+Host: https://ony.ru

@@ -1,0 +1,44 @@
+@use "../partials/mixins";
+@use "../partials/variable";
+
+.approach {
+    &__row {
+        margin-bottom: 30rem;
+        @include mixins.grid-row();
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__col {
+        @include mixins.grid-col(2,4);
+    }
+
+    &__text {
+        color: #B2B2B2;
+    }
+}
+
+@media only screen and (max-width: variable.$small) {
+    .approach {
+        font-size: 17rem;
+        line-height: 22rem;
+
+        &__row {
+            margin-bottom: 15rem;
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+    .approach {
+        &__col {
+            @include mixins.grid-col(4,4);
+        }
+
+        &__title {
+            margin-bottom: 5rem;
+        }
+    }
+}

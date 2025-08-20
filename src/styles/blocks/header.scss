@@ -1,0 +1,255 @@
+@use "../partials/mixins";
+@use "../partials/variable";
+
+.header {
+	position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+	min-height: var(--header-min-height);
+	color: var(--color);
+	z-index: 99;
+	pointer-events: none;
+
+	&.is-active .header__wrap {
+		transform: translate3d(0, 0%, 0);
+	}
+
+	&__wrap {
+		background-color: var(--background-color);
+		transform: translate3d(0, -100%, 0);
+    	transition: transform .3s, background-color .3s;
+		transform-style: preserve-3d;
+		pointer-events: auto;
+	}
+
+	&__top {
+		background-color: #f3f3ee;
+		position: relative;
+		z-index: 2;
+	}
+
+	&__main {
+		position: relative;
+	}
+
+	&__promo {
+		padding: 8rem 0;
+		text-align: center;
+	}
+
+	&__promo-link {
+		display: block;
+		font-size: 16rem;
+		line-height: 1.25;
+		font-weight: 400;
+
+		span {
+			border-bottom: 1px solid transparent;
+			transition: border-color .3s;
+		}
+	}
+
+	&__container {
+		@include mixins.grid-container();
+	}
+
+	&__box {
+		padding: 20rem 0;
+		display: flex;
+		align-items: center;
+		gap: calc(2 * var(--grid-gap));;
+	}
+
+	&__logo {
+		position: relative;
+		line-height: 0;
+		z-index: 2;
+		width: 80rem;
+		flex-shrink: 0;
+		transition: opacity .3s;
+
+		.svg-icon {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__nav {
+		margin-left: auto;
+	}
+
+	&__burger {
+		display: none;
+    	width: 40rem;
+    	height: 40rem;
+		margin-left: auto;
+    	position: relative;
+    	z-index: 10;
+		@include mixins.clearButton(variable.$font0);
+
+		span {
+			position: absolute;
+			left: 0;
+			display: block;
+			height: 2rem;
+			width: 40rem;
+			background-color: var(--color);
+			transition: top 0.3s 0.3s, transform 0.3s;
+			transform-origin: center;
+			pointer-events: none;
+
+			&:nth-of-type(1) {
+				top: calc(50% - 9rem);
+			}
+
+			&:nth-of-type(2) {
+				top: calc(50% + 7rem);
+			}
+		}
+	}
+
+	&.inverse {
+		background-color: transparent;
+
+		.header {
+			&__wrap {
+				background-color: var(--background-color);
+			}
+
+			&__top {
+				background-color: #222;
+			}
+		}
+	}
+
+	/* &.is-show-button {
+		.header {
+			&__button {
+				line-height: 25rem;
+				position: relative;
+				z-index: 2;
+			}
+		}
+
+		.nav {
+			&__item {
+				&--services {
+					.nav-submenu {
+						margin: -54rem 0 0;  WARN: проверить отступ плсде кнопки 
+					}
+				}
+			}
+		}
+	} */
+}
+
+@media only screen and (hover: hover) {
+	.header {
+		&__promo-link {
+			&:hover {
+				span {
+					border-color: currentColor;
+				}
+			}
+		}
+
+		&__logo {
+			&:hover {
+				opacity: .7;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: variable.$small) {
+	.header {
+		&__logo {
+			width: 96rem;
+		}
+
+		&__box {
+			padding: 25rem 0 15rem;
+			gap: 40rem;
+		}
+
+		&__burger {
+			display: block;
+		}
+
+		&__promo {
+			padding: 5rem 0;
+		}
+
+		&__promo-link {
+			font-size: 14rem;
+			line-height: 20rem;
+		}
+
+		&__nav {
+			position: fixed;
+			top: 0;
+			right: 100%;
+			height: 100%;
+			width: 100%;
+			background-color: var(--background-color);
+			transform: translateX(0);
+			min-height: 100vh;
+			min-height: calc(var(--vh, 1vh) * 100);
+			padding: var(--header-min-height) calc(2 * var(--grid-gap)) 0;
+			z-index: 1;
+			transition: min-height .3s,  transform .3s;
+		}
+
+		/* &.is-show-button {
+			.header {
+				&__button {
+					margin-left: auto;
+				}
+			}
+
+			.nav {
+				&__item {
+					&--services {
+						.nav-submenu {
+							margin: 0;
+						}
+					}
+				}
+			}
+		} */
+	}
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+	.header {
+		&__logo {
+			width: 64rem;
+		}
+
+		&__box {
+			padding: 20rem 0 10rem;
+		}
+
+		&__burger {
+			width: 30rem;
+			height: 30rem;
+
+			span {
+				width: 30rem;
+			}
+		}
+
+		/* &.is-show-button {
+			.header {
+				&__button {
+					display: none;
+				}
+
+				&__nav {
+					padding-bottom: 75rem;
+				}
+			}
+		} */
+	}
+}

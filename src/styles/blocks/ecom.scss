@@ -1,0 +1,408 @@
+@use "../partials/mixins";
+@use "../partials/variable";
+
+.ecom {
+    &__intro {
+        @include mixins.indent-intro();
+    }
+
+    &__cases {
+        padding: 100rem 0 160rem;
+        margin-bottom: 160rem;
+    }
+
+    &__info {
+        margin-bottom: 160rem;
+
+        .infoblock {
+            &__item {
+				border-bottom: 1px solid #000;
+
+				&:first-child {
+					border-top: 1px solid #000;
+				}
+			}
+
+            &__numbers {
+                margin-top: 80rem;
+            }
+        }
+
+        .infoblock-card {
+            &__top {
+                &::before,
+                &::after {
+                    display: none;
+                }
+
+                .svg-icon {
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    transition: opacity .3s;
+                }
+            }
+
+            &__content {
+                max-width: 90%;
+                padding-left: 0;
+            }
+
+            &.is-open {
+                .infoblock-card {
+                    &__top {
+                        .svg-icon {
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .info-num {
+            &__item {
+                @include mixins.grid-col(2,8);
+            }
+
+            &__title {
+                font-size: 55rem;
+                line-height: 1.36;
+            }
+
+            &__text {
+                font-size: 20rem;
+                line-height: 1.25;
+            }
+        }
+    }
+
+    &__media {
+        margin-bottom: 160rem;
+
+        .media__wrap {
+            padding: 0;
+            //margin: 0 calc(-2 * var(--grid-gap));
+        }
+    }
+
+    &__form {
+        .brief {
+            &__wrap {
+                padding: 40rem 0 100rem;
+            }
+
+            &__title {
+                margin-bottom: 90rem;
+            }
+        }
+    }
+}
+
+.ecom-cases {
+    &__container {
+		@include mixins.grid-container();
+	}
+
+	&__row {
+		@include mixins.grid-row();
+	}
+
+	&__col {
+		&--side {
+			@include mixins.grid-col(2,6);
+		}
+
+		&--main {
+			@include mixins.grid-col(4,6);
+		}
+	}
+
+    &__item {
+        margin-bottom: 80rem;
+        padding-bottom: 45rem;
+        border-bottom: 1px solid currentColor;
+
+        &:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+    }
+
+    &__link {
+        font-size: 19rem;
+        line-height: 1.3;
+    }
+}
+
+.ecom-cases-card {
+    font-size: 35rem;
+    line-height: 1.3;
+
+    &__title {
+        margin-bottom: 25rem;
+
+        span {
+            border-bottom: 1px solid transparent;
+            transition: border-color .3s;
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: 25rem;
+    }
+
+    &__info {
+        margin-top: 45rem;
+    }
+
+    &__list {
+        margin-top: -20rem;
+        @include mixins.grid-row();
+    }
+
+    &__item {
+        max-width: 344rem;
+        margin-top: 20rem;
+        @include mixins.grid-col(2,6);
+        @include mixins.grid-offset-right(1,6);
+    }
+
+    &__num {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        span {
+            font-weight: 700;
+            line-height: 1;
+            margin-left: 5rem;
+        }
+    }
+
+    &__text {
+        margin-top: 5rem;
+        font-size: 19rem;
+        line-height: 1.3;
+    }
+
+    &__item-links {
+        position: relative;
+        padding-left: 40rem;
+        margin-bottom: 5rem;
+        font-size: 19rem;
+        line-height: 1.3;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 12rem;
+            margin-top: -1px;
+            height: 1px;
+            width: 24rem;
+            background-color: currentColor;
+        }
+    }
+
+    &__link {
+        span {
+            border-bottom: 1px solid transparent;
+            transition: border-color .3s;
+        }
+    }
+}
+
+@media only screen and (hover: hover) {
+    .ecom-cases-card {
+        &__main {
+            &:hover {
+                .ecom-cases-card {
+                    &__title {
+                        span {
+                            border-color: currentColor;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__link {
+            &:hover {
+                span {
+                    border-color: currentColor;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$normal) {
+    .ecom-cases-card {
+        &__item {
+            @include mixins.grid-col(3,6);
+            @include mixins.grid-offset-right(0,6);
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$small) {
+    .ecom {
+        &__info {
+            margin-bottom: 120rem;
+
+            .infoblock {
+                &__numbers {
+                    margin-top: 60rem;
+                }
+            }
+
+            .info-num {
+                &__list {
+                    margin-top: -60rem;
+                }
+
+                &__item {
+                    margin-top: 60rem;
+                    @include mixins.grid-col(3,6);
+                }
+            }
+        }
+
+        &__cases {
+            padding: 40rem 0 80rem;
+            margin-bottom: 40rem;
+        }
+
+        &__media {
+            margin-bottom: 120rem;
+        }
+    }
+
+    .ecom-cases {
+        &__col {
+            &--side,
+            &--main {
+                @include mixins.grid-col(6,6);
+            }
+        }
+
+        &__title {
+            font-size: 35rem;
+        }
+
+        &__link {
+            margin-bottom: 24rem;
+        }
+    }
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+    .ecom {
+        &__info {
+            margin-bottom: 80rem;
+
+            .infoblock {
+                &__title {
+                    /* font-size: 30rem;
+                    line-height: 1.17; */
+                    margin-bottom: 18rem;
+                }
+
+                &__numbers {
+                    margin-top: 40rem;
+                }
+            }
+
+            .infoblock-card {
+                &__top {
+                    .svg-icon {
+                        width: 20rem;
+                        height: 20rem;
+                    }
+                }
+
+                &__content {
+                    padding-top: 0;
+                }
+            }
+
+            .info-num {
+                &__list {
+                    margin-top: -40rem;
+                }
+
+                &__item {
+                    margin-top: 40rem;
+                }
+
+                &__title {
+                    font-size: 35rem;
+                }
+
+                &__text {
+                    font-size: 17rem;
+                }
+            }
+
+            .infoblock-methodology {
+                &__subtitle,
+                &__link {
+                    font-size: 30rem;
+                    line-height: 1.17;
+                }
+            }
+
+            .technology {
+                &__title {
+                    font-size: 30rem;
+                    line-height: 1.17;
+                }
+            }
+        }
+
+        &__media {
+            margin-bottom: 40rem;
+        }
+
+        &__form {
+            .brief {
+                &__title {
+                    margin-bottom: 50rem;
+                }
+
+                &__form {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    .ecom-cases {
+        &__title {
+            font-size: 17rem;
+            line-height: 1.3;
+        }
+
+        &__link {
+            font-size: 25rem;
+        }
+    }
+
+    .ecom-cases-card {
+        &__title {
+            font-size: 35rem;
+        }
+
+        &__subtitle {
+            font-size: 17rem;
+            line-height: 1.3;
+        }
+    }
+}

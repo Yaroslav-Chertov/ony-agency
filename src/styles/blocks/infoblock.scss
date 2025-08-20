@@ -1,0 +1,1040 @@
+@use "../partials/mixins";
+@use "../partials/variable";
+
+.infoblock {
+	&__container {
+		@include mixins.grid-container();
+	}
+
+	&__row {
+		@include mixins.grid-row();
+	}
+
+	&__col {
+		&--side {
+			@include mixins.grid-col(2, 6);
+		}
+
+		&--main {
+			@include mixins.grid-col(4, 6);
+		}
+	}
+
+	&__title {
+		//margin-top: 10rem;
+		margin-bottom: 45rem;
+		max-width: 95%;
+	}
+
+	&__text {
+		font-size: 35rem;
+		line-height: 1.05;
+
+		&.body-l {
+			@include mixins.body-l();
+		}
+
+		/* WARN: зачем для всех ссылок h1 сделан?? */
+		/* a {
+			@include mixins.h1();
+		} */
+	}
+
+	&__links {
+		display: inline-flex;
+		flex-wrap: wrap;
+		@include mixins.body-l();
+
+		a {
+			margin-right: 10rem;
+			@include mixins.link-l();
+
+			&::after {
+				content: ',';
+			}
+
+			&:last-child {
+				margin-right: 0;
+
+				&::after {
+					content: '.';
+				}
+			}
+
+			span {
+				border-bottom: 1px solid currentColor;
+				transition: border-color .3s;
+			}
+		}
+	}
+
+	&__link {
+		display: inline-flex;
+		gap: 15rem;
+		align-items: center;
+		transition: opacity .3s;
+		@include mixins.body-l();
+	}
+
+	&__more-btn {
+		margin-top: 45rem;
+	}
+
+	&__video {
+		margin-top: 80rem;
+	}
+
+	&__block {
+		margin-bottom: 120rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__content {
+		font-size: 25rem;
+		line-height: 1.25;
+		margin-bottom: 80rem;
+
+		h3 {
+			font-size: 35rem;
+			line-height: 1.3;
+			margin: 0;
+			margin-bottom: 1em;
+		}
+
+		p {
+			margin: 0 0 1em;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		ul {
+			--line-height: 31rem;
+			margin: 0 0 1em;
+
+			li {
+				position: relative;
+				padding-left: 44rem;
+
+				&::before {
+					content: '';
+					width: 24rem;
+					height: 1rem;
+					position: absolute;
+					top: calc(var(--line-height) / 2);
+					transform: translateY(-50%);
+					left: 10rem;
+					background-color: currentColor;
+				}
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__technology {
+		margin-bottom: 45rem;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	&__article {
+		border-bottom: 1px solid #d7d7d7;
+		margin-bottom: 45px;
+		padding-bottom: 45px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&--vacancies {
+		.infoblock {
+			&__item {
+				padding: 45rem 0;
+				border-bottom: 1px solid currentColor;
+
+				&:first-child {
+					border-top: 1px solid currentColor;
+				}
+			}
+		}
+	}
+
+	&--services {
+		.infoblock {
+			&__item {
+				margin-bottom: 25rem;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	&--case {
+		.infoblock {
+			&__title {
+				margin-bottom: 15rem;
+			}
+
+			&__text {
+				@include mixins.body-m();
+
+				& {
+					line-height: 1.29;
+				}
+			}
+		}
+	}
+
+	&--reviews {
+		.infoblock {
+			&__title {
+				margin: 0;
+				font-size: 55rem;
+				line-height: 1.36;
+			}
+
+			&__item {
+				margin-bottom: 60rem;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				.infoblock-author {
+					margin-bottom: 20rem;
+				}
+			}
+		}
+	}
+
+	&--audio {
+		.infoblock {
+			&__item {
+				border-bottom: 1px solid #565656;
+
+				&:first-child {
+					.infoblock-card {
+						&__top {
+							padding-top: 10px;
+						}
+					}
+				}
+			}
+		}
+
+		.infoblock-card {
+			&__top {
+				font-size: 55rem;
+				line-height: 1;
+				letter-spacing: -0.01em;
+				padding: 32px 0;
+			}
+
+			&__content {
+				padding: 0 55px 50px 0;
+				max-width: 100%;
+			}
+
+			&.is-open {
+				.infoblock-card {
+					&__top {
+						&::before {
+							opacity: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&--hover {
+		.infoblock {
+			&__box {
+				position: relative;
+				width: 50%;
+			}
+
+			&__text {
+				position: absolute;
+				top: 0;
+				left: 100%;
+				width: 100%;
+				padding: 0 calc(2 * var(--grid-gap));
+				opacity: 0;
+				visibility: hidden;
+				font-size: 17rem;
+				line-height: 1.5;
+				transition: opacity .3s, visibility .3s;
+			}
+		}
+	}
+}
+
+.info-tags {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: flex-start;
+	font-size: 19rem;
+	line-height: 1.3;
+
+	&__item {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+
+		&::after {
+			content: '';
+			display: block;
+			width: 3rem;
+			height: 3rem;
+			border-radius: 50%;
+			background-color: currentColor;
+			margin: 0 10rem;
+		}
+
+		&:last-of-type {
+			&::after {
+				display: none;
+			}
+		}
+	}
+}
+
+.info-num {
+	&__list {
+		margin-top: -100rem;
+		@include mixins.grid-row();
+	}
+
+	&__item {
+		margin-top: 100rem;
+		@include mixins.grid-col(3, 6);
+	}
+
+	&__title {
+		margin-bottom: 10rem;
+	}
+}
+
+.infoblock-card {
+	&__top {
+		padding: 39rem 0;
+		position: relative;
+		padding-right: 100rem;
+		width: 100%;
+		cursor: pointer;
+		font-size: 35rem;
+		line-height: 1.05;
+		transition: opacity .3s;
+
+		&::before,
+		&::after {
+			--size-line: 80rem;
+			content: '';
+			display: block;
+			background-color: #ccc;
+			position: absolute;
+			top: 50%;
+			right: 0;
+			width: 1rem;
+			height: var(--size-line);
+			transform-origin: center;
+			margin-top: calc(var(--size-line) / (-2));
+			margin-right: calc(var(--size-line) / 2);
+			transition: transform .3s, opacity .3s;
+		}
+
+		&::before {
+			transform: rotate(90deg);
+		}
+	}
+
+	&__drop {
+		height: 0;
+		overflow: hidden;
+		opacity: 0;
+		transition: height 0.3s, opacity .3s;
+	}
+
+	&__content {
+		padding-left: 35rem;
+		padding-bottom: 40rem;
+		max-width: 652rem;
+		font-size: 19rem;
+		line-height: 1.2;
+
+		ul {
+			font-size: 25rem;
+			line-height: 1.25;
+			--line-height: 31rem;
+
+			li {
+				position: relative;
+				padding-left: 44rem;
+
+				&::before {
+					content: '';
+					width: 24rem;
+					height: 1rem;
+					position: absolute;
+					top: calc(var(--line-height) / 2);
+					transform: translateY(-50%);
+					left: 10rem;
+					background-color: currentColor;
+				}
+			}
+		}
+
+		&--full {
+			max-width: 100%;
+			padding-left: 0;
+		}
+	}
+
+	&.is-open {
+		.infoblock-card {
+			&__top {
+				&::after {
+					opacity: 0;
+				}
+			}
+
+			&__drop {
+				opacity: 1;
+				transition: opacity .2s, height .3s;
+			}
+		}
+	}
+}
+
+.infoblock-methodology {
+	&__item {
+		padding-bottom: 25rem;
+		margin-bottom: 25rem;
+		border-bottom: 1px solid currentColor;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__subtitle {
+		font-size: 55rem;
+		line-height: 1;
+		letter-spacing: -0.01em;
+		margin-bottom: 25rem;
+	}
+
+	&__link {
+		display: inline-block;
+		font-size: 55rem;
+		line-height: 1;
+		letter-spacing: -0.01em;
+		margin-bottom: 25rem;
+
+		span {
+			border-bottom: 1px solid currentColor;
+			transition: border-color .3s;
+		}
+	}
+
+	&__text {
+		color: #6C6C6C;
+		@include mixins.body-s();
+	}
+}
+
+.infoblock-author {
+	font-size: 19rem;
+	line-height: 1.3;
+	max-width: 242rem;
+
+	&__img {
+		width: 80rem;
+		height: 80rem;
+		border-radius: 50%;
+		overflow: hidden;
+		margin-bottom: 20rem;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__position {
+		opacity: .5;
+	}
+
+	&--logo {
+		.infoblock-author {
+			&__img {
+				border-radius: unset;
+
+				img {
+					object-fit: contain;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (hover: hover) {
+	.infoblock {
+		&__links {
+			a {
+				&:hover {
+					span {
+						border-color: transparent;
+					}
+				}
+			}
+		}
+
+		&__text {
+			a {
+				&:hover {
+					border-color: transparent;
+				}
+			}
+		}
+
+		&--vacancies {
+			.infoblock {
+				&__link {
+					&:hover {
+						opacity: .7;
+					}
+				}
+			}
+		}
+
+		&--hover {
+			.infoblock {
+				&__box {
+					&:hover {
+						.infoblock {
+							&__text {
+								opacity: 1;
+								visibility: visible;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.infoblock-card {
+		&__top {
+			&:hover {
+				opacity: .7;
+			}
+		}
+	}
+
+	.infoblock-methodology {
+		&__link {
+			&:hover {
+				span {
+					border-color: transparent;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: variable.$medium) {
+	.infoblock {
+		&__col {
+
+			&--side,
+			&--main {
+				@include mixins.grid-col(6, 6);
+			}
+		}
+
+		&__more-btn {
+			margin-top: 35rem;
+		}
+
+		&--case,
+		&--reviews {
+			.infoblock {
+				&__col {
+					&--side {
+						@include mixins.grid-col(2, 6);
+					}
+
+					&--main {
+						@include mixins.grid-col(4, 6);
+					}
+				}
+			}
+		}
+	}
+
+	.info-num {
+		&__list {
+			margin-top: -60rem;
+		}
+
+		&__item {
+			margin-top: 60rem;
+		}
+	}
+}
+
+@media only screen and (max-width: variable.$small) {
+	.infoblock {
+		&__title {
+			margin-bottom: 30rem;
+			max-width: 100%;
+		}
+
+		&__text {
+			font-size: 25rem;
+			line-height: 1.25;
+		}
+
+		&__more-btn {
+			margin-top: 30rem;
+		}
+
+		&__video {
+			margin-top: 40rem;
+		}
+
+		&__content {
+			h3 {
+				font-size: 25rem;
+				line-height: 1.25;
+			}
+
+			p,
+			ul {
+				font-size: 17rem;
+				line-height: 1.3;
+				--line-height: 22rem;
+
+				li {
+					padding-left: 34rem;
+
+					&::before {
+						left: 0;
+					}
+				}
+			}
+		}
+
+		&--vacancies {
+			.infoblock {
+				&__item {
+					padding: 30rem 0;
+				}
+
+				&__link {
+					gap: 10rem;
+
+					.svg-icon {
+						width: 30rem;
+						height: 30rem;
+					}
+				}
+			}
+		}
+
+		&--case {
+			.infoblock {
+				&__text {
+					line-height: 1.47;
+				}
+			}
+		}
+
+		&--audio {
+			.infoblock-card {
+				&__top {
+					font-size: 45rem;
+					letter-spacing: 0;
+				}
+
+				&__content {
+					padding: 0 10rem 35rem 0;
+				}
+			}
+		}
+
+		&--reviews {
+			.infoblock {
+				&__col {
+
+					&--side,
+					&--main {
+						@include mixins.grid-col(6, 6);
+					}
+				}
+
+				&__title {
+					font-size: 19rem;
+					margin-top: 25rem;
+				}
+			}
+		}
+
+		&--hover {
+			.infoblock {
+				&__item {
+					margin-bottom: 60rem;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+
+				&__box {
+					width: 100%;
+				}
+
+				&__text {
+					position: static;
+					opacity: 1;
+					visibility: visible;
+					padding: 0;
+					font-size: 19rem;
+					line-height: 1.3;
+				}
+
+				&__title {
+					font-size: 30rem;
+					line-height: 1.17;
+					margin-bottom: 20rem;
+				}
+			}
+		}
+	}
+
+	.info-num {
+		&__list {
+			margin-top: -45rem;
+		}
+
+		&__item {
+			margin-top: 45rem;
+		}
+
+		&__title {
+			margin-bottom: 0;
+			font-size: 50rem;
+			line-height: 1.2; //60rem
+		}
+	}
+
+	.infoblock-card {
+		&__top {
+			font-size: 25rem;
+			line-height: 1.25;
+		}
+
+		&__content {
+			ul {
+				font-size: 17rem;
+				line-height: 1.3;
+				--line-height: 22rem;
+
+				li {
+					padding-left: 34rem;
+
+					&::before {
+						left: 0;
+					}
+				}
+			}
+		}
+	}
+
+	.infoblock-methodology {
+		&__item {
+			padding-bottom: 20rem;
+			margin-bottom: 20rem;
+		}
+
+		&__subtitle {
+			font-size: 30rem;
+			line-height: 1.17;
+			letter-spacing: 0;
+			margin-bottom: 20rem;
+		}
+	}
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+	.infoblock {
+		&__title {
+			margin-top: 0;
+			margin-bottom: 25rem;
+			font-size: 19rem;
+			line-height: 30rem;
+		}
+
+		&__text {
+			font-size: 17rem;
+			line-height: 1.3;
+
+			&.body-l {
+				font-size: 30rem;
+				line-height: 1.17;
+			}
+		}
+
+		&__more-btn {
+			margin-top: 25rem;
+		}
+
+		&__content {
+			h3 {
+				font-size: 17rem;
+				line-height: 1.3;
+				font-weight: 500;
+			}
+
+			&__content {
+				ul {
+					li {
+						padding-left: 30rem;
+					}
+				}
+			}
+		}
+
+		&--vacancies {
+			.infoblock {
+				&__title {
+					margin-bottom: 20rem;
+				}
+
+				&__item {
+					padding: 20rem 0;
+				}
+
+				&__link {
+					gap: 5rem;
+
+					.svg-icon {
+						width: 21rem;
+						height: 21rem;
+					}
+				}
+			}
+		}
+
+		&--case {
+			.infoblock {
+				&__col {
+
+					&--side,
+					&--main {
+						@include mixins.grid-col(6, 6);
+					}
+				}
+			}
+		}
+
+		&--audio {
+			.infoblock-card {
+				&__top {
+					font-size: 30rem;
+					line-height: 35rem;
+					padding: 20px 0;
+				}
+			}
+		}
+	}
+
+	.info-num {
+		&__list {
+			margin-top: -40rem;
+		}
+
+		&__item {
+			margin-top: 40rem;
+		}
+
+		&__title {
+			font-size: 35rem;
+			line-height: 1.14; //40rem
+		}
+	}
+
+	.infoblock-card {
+		&__top {
+			padding: 25rem 0;
+			padding-right: 50rem;
+			font-size: 17rem;
+			line-height: 1.3;
+			font-weight: 500;
+
+			&::before,
+			&::after {
+				--size-line: 40rem;
+			}
+		}
+
+		&__content {
+			font-size: 17rem;
+			line-height: 1.3;
+			padding-left: 15rem;
+			padding: 20rem 0 40rem;
+		}
+	}
+
+	.infoblock-methodology {
+		&__item {
+			padding-bottom: 18rem;
+			margin-bottom: 18rem;
+		}
+
+		&__subtitle {
+			font-size: 17rem;
+			line-height: 1.3;
+			margin-bottom: 18rem;
+		}
+	}
+}
+
+
+/* WARN: API FIX STYLES ->*/
+.infoblock {
+	&--api {
+		.infoblock {
+			&__links {
+				a {
+					margin-right: 0;
+					display: inline-block;
+
+					&::after {
+						display: none;
+					}
+
+					div {
+						border-bottom: 1px solid currentColor;
+						transition: border-color .3s;
+					}
+				}
+
+				.client-li {
+					display: inline;
+
+					div {
+						display: inline;
+						margin-right: 10rem;
+					}
+				}
+			}
+		}
+	}
+
+	&__text {
+		.is-inline-text {
+			display: inline;
+		}
+
+		.is-text-link {
+			border-bottom: 1px solid currentColor;
+			transition: border-color .3s;
+		}
+	}
+}
+
+.info-num {
+	.data-div {
+		margin-top: 100rem;
+		@include mixins.grid-col(3, 6);
+
+		p {
+			margin-bottom: 10rem;
+			@include mixins.h1();
+		}
+	}
+}
+
+@media only screen and (hover: hover) {
+	.infoblock {
+		&--api {
+			.infoblock {
+				&__links {
+					a {
+						&:hover {
+							div {
+								border-color: transparent;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: variable.$medium) {
+	.info-num {
+		.data-div {
+			margin-top: 60rem;
+		}
+	}
+}
+
+@media only screen and (max-width: variable.$small) {
+	.info-num {
+		.data-div {
+			margin-top: 45rem;
+
+			p {
+				margin-bottom: 0;
+				font-size: 50rem;
+				line-height: 1.2; //60rem
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: variable.$xsmall) {
+	.infoblock {
+		&--api {
+			.infoblock {
+				&__links {
+					.client-li {
+						margin-right: 15rem;
+
+						div {
+							margin-right: 0;
+							font-size: 30rem;
+							line-height: 40rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* WARN: API FIX STYLES <-*/

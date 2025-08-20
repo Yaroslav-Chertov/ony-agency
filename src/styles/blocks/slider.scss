@@ -1,0 +1,294 @@
+@use "../partials/mixins";
+@use "../partials/variable";
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+
+    .tns-outer,
+    .tns-ovh,
+    .tns-inner {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    &__list {
+        display: flex;
+        align-items: stretch;
+        flex-grow: 1;
+    }
+
+    &__item {
+        width: 100%;
+        flex-shrink: 0;
+    }
+
+    .tns-nav {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        gap: 6rem;
+        width: 100%;
+        max-width: 360rem;
+        margin: 0 auto;
+
+        button {
+            position: relative;
+            display: block;
+            height: 2rem;
+            width: 5%;
+            background-color: #000;
+            transition: width .3s, flex-grow .3s, background-color .3s;
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: #000;
+                transform: scaleX(0);
+                transform-origin: left;
+            }
+
+            &.tns-nav-active {
+                flex-grow: 1;
+
+                /* &::before {
+                    transform: scaleX(1);
+                    transition: transform 5s linear;
+                } */
+            }
+        }
+    }
+}
+
+// .loading-ring {
+//     width: 16px;
+//     height: 16px;
+//     position: relative;
+//     transform-origin: center;
+// }
+
+// .hold {
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     clip-path: inset(0 0 0 50%); /* Обрезаем левую часть */
+//     border-radius: 50%;
+//     background-color: #fff;
+// }
+
+// .fill {
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     border-radius: 50%;
+//     clip-path: inset(0 50% 0 0); /* Обрезаем правую часть */
+//     background-color: #000;
+// }
+
+// .swiper-pagination-bullet-active .left .fill {
+//     z-index: 1;
+//     animation: fill-left 2s linear forwards;
+// }
+
+// @keyframes fill-left {
+//     0% {
+//         transform: rotate(0deg);
+//     }
+//     100% {
+//         transform: rotate(180deg);
+//     }
+// }
+
+// .right {
+//     z-index: 3;
+//     transform: rotate(180deg);
+// }
+
+// .swiper-pagination-bullet-active .right .fill {
+//     z-index: 3;
+//     animation: fill-right 2s linear forwards;
+//     animation-delay: 2s;
+// }
+
+// @keyframes fill-right {
+//     0% {
+//         transform: rotate(0deg);
+//     }
+//     100% {
+//         transform: rotate(180deg);
+//     }
+// }
+
+// /* Стиль неактивных буллетов */
+// .swiper-pagination-bullet {
+//     width: 16px !important;
+//     height: 16px !important;
+//     border: 1px solid #fff;
+//     background: transparent;
+// }
+
+// .swiper-pagination-bullet-active {
+//     background: none;
+// }
+
+// .loading-ring--white {
+//     position: relative;
+//     transform: scale(0.75);
+//     background-color: #fff;
+// }
+
+// .loading-ring--white::after {
+//     content: '';
+//     position: absolute;
+//     left: 50%;
+//     top: 50%;
+//     transform: translate(-50%, -50%);
+//     width: 100%;
+//     height: 100%;
+//     border: 1px solid #000;
+//     border-radius: 50%;
+// }
+
+// .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) .hold {
+//     background: #fff;
+// }
+
+// .swiper-custom-pagination .swiper-pagination-bullet {
+//     background-color: #fff;
+// }
+/* 
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: relative;
+    transform:rotate(45deg);
+    background: #fff;
+  }
+  .loader::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border:24px solid #FF3D00;
+    animation: prixClipFix 2s infinite linear;
+  }
+
+  @keyframes prixClipFix {
+      0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+      25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+      50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+      75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+      100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+  } */
+
+
+
+/* .swiper-pagination-bullet {
+    width: 16px !important;
+    height: 16px !important;
+    background-color: white;
+    position: relative;
+    border: 1px solid currentColor;
+    opacity: 1 !important;
+
+    .loader {
+        --loader-fill-size: 7px;
+        width: calc(var(--loader-fill-size) * 2);
+        height: calc(var(--loader-fill-size) * 2);
+        border-radius: 50%;
+        position: relative;
+        transform:rotate(45deg);
+        top: 0;
+        left: 0;
+        background-color: #fff;
+    }
+}
+
+.swiper-pagination-bullet-active {
+    position: relative;
+
+    .loader {
+        &::before {
+            content: "";
+            box-sizing: border-box;
+            position: absolute;
+            border-radius: 50%;
+            border: var(--loader-fill-size) solid black;
+            animation: prixClipFix 4s linear infinite;
+        }
+    }
+}
+ */
+.swiper-pagination {
+    display: inline-flex;
+    justify-content: flex-start;
+    gap: 16px;
+    padding: 10rem calc(2 * var(--grid-gap));
+    position: static !important;
+}
+
+.swiper-pagination-bullet {
+    width: 16px !important;
+    height: 16px !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    position: relative;
+    background: #fff !important;
+
+    &:not(.swiper-pagination-bullet-active) {
+        .loader {
+            &::before {
+                animation: none;
+                border-color: transparent;
+            }
+        }
+    }
+}
+
+.loader {
+    --loader-fill-size: 7px;
+    --border-width: 1px;
+    width: calc(var(--loader-fill-size) * 2);
+    height: calc(var(--loader-fill-size) * 2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-width: var(--border-width);
+    border-style: solid;
+    border-color: #000;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: calc(-1 * var(--border-width));
+        border-radius: 50%;
+        border: var(--loader-fill-size) solid #000;
+        animation: prixClipFix 4s linear forwards;
+    }
+}
+
+
+@keyframes prixClipFix {
+    0%   {clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);}
+    25%  {clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);}
+    50%  {clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);}
+    75%  {clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);}
+    100% {clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);}
+}
+
