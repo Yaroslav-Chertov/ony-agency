@@ -133,6 +133,6 @@ npm run server
 ## Другие проекты
 
 - [Structura — SaaS-планер продуктивности](https://github.com/Yaroslav-Chertov/structura) — Next.js 16, React 19, TypeScript, ЮКасса, Resend
-- [GALITSKIY & GALITSKIY](https://github.com/Yaroslav-Chertov/galitskiy-and-galitskiy) — Vue 3, кастомный scroll-controller, Lighthouse 90+
+- [GALITSKIY & GALITSKIY](https://github.com/Yaroslav-Chertov/galitskiy-and-galitskiy) — JSX, кастомный scroll-controller, Lighthouse 90+
 - [Стажер Онлайн — HR-платформа](https://github.com/Yaroslav-Chertov/hr-platform) — Vue.js + SCSS + Django + REST API
 - [Movies Explorer](https://github.com/Yaroslav-Chertov/movies-explorer-frontend) — Fullstack: React + Node.js + Express + MongoDB + JWT
