@@ -18,7 +18,7 @@
 
 | Слой | Технология |
 |---|---|
-| UI | TypeScript, JSX (jtsx-loader) |
+| UI | JavaScript, JSX (jtsx-loader) |
 | Стили | SCSS (Sass) |
 | Сервер | Node.js, Express 4 |
 | Сборка | Gulp 5, esbuild |
